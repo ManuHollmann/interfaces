@@ -159,7 +159,7 @@ article h3, p{
     overflow-x: scroll;
 }
 
-.carrousel-webkit-scrollbar-button{
+.carrousel::-webkit-scrollbar-button{
     border-radius: 20px;
     color: rgba(89, 106, 254, 1);
 }
@@ -214,6 +214,19 @@ article h3, p{
 }
 
 .lore :last-child{
-    color: green;
+    justify-content: center;
     text-align: center;
+    margin: auto;
+    margin-bottom: 15%;
+    margin-top: 7%;
+    display: flex;
+}
+
+iframe{
+    margin: auto;
+    width: 80%;
+    height: 468.44px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
