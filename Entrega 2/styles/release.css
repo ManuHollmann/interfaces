@@ -167,8 +167,8 @@ article h3, p{
 .slider {
     display: inline-flex;
     text-align: center;
-    overflow-y: hidden;
     margin-bottom: 30px;
+    margin-top: 30px;
 } 
 
 .slider section{
@@ -184,6 +184,11 @@ article h3, p{
     top: 0px;
     border-radius: 0px;
     margin: 1vh;
+}
+
+.slider section:hover{
+    transform: scale(1.1);
+    transition: 0.5s ease;
 }
 
 .slider section article{
@@ -211,6 +216,11 @@ article h3, p{
 .card_title{
     color: rgba(203, 208, 255, 1);
     
+}
+
+.slider figure:hover{
+    transform: scale(1.1);
+    transition: 0.5s ease;
 }
 
 .lore :last-child{
