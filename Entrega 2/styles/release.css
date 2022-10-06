@@ -1,7 +1,8 @@
 .container{
     background: rgba(28, 28, 40, 1);
     color: rgba(250, 244, 244, 1);
-    font-family: Lato;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
 }
 
 .hero{
@@ -44,7 +45,6 @@ h1{
 
 h2{
     text-align: start;
-    padding: 10% 10.5% 0%;
     font-size: 40px;
 }
 
@@ -82,7 +82,7 @@ button{
 }
 
 .hero button:hover{
-    border: 4px solid gray;
+    border: 1px solid gray;
     background-color: rgba(250, 244, 244, 1);
     box-sizing: inset 0 0 0 4px #eee;
 }
@@ -150,79 +150,6 @@ article h3, p{
     transform: translateX(0);
 }
 
-/*==============================================================================================================================*/
-
-
-.carrousel{
-    width: 80%;
-    margin: auto;
-    overflow-x: scroll;
-}
-
-.carrousel::-webkit-scrollbar-button{
-    border-radius: 20px;
-    color: rgba(89, 106, 254, 1);
-}
-
-.slider {
-    display: inline-flex;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: 30px;
-} 
-
-.slider section{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    border: 2px solid rgba(119, 123, 158);
-    height: 348px;
-    width: 237px;
-    left: 0px;
-    top: 0px;
-    border-radius: 0px;
-    margin: 1vh;
-}
-
-.slider section:hover{
-    transform: scale(1.1);
-    transition: 0.5s ease;
-}
-
-.slider section article{
-    font-family: Inter;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.5px;
-    text-align: center; 
-    grid-area: 2 / 1 / 4 / 2;
-}
-
-.card_img{
-    display: flex;
-    align-items: center;
-   justify-content: center;
-   grid-area: 1 / 1 / 2 / 2;
-}
-
-.card_img img{
-    justify-content: center;
-    
-}
-
-.card_title{
-    color: rgba(203, 208, 255, 1);
-    
-}
-
-.slider figure:hover{
-    transform: scale(1.1);
-    transition: 0.5s ease;
-}
-
 .lore :last-child{
     justify-content: center;
     text-align: center;
@@ -240,3 +167,121 @@ iframe{
     align-items: center;
     display: flex;
 }
+
+.slider-wrap {
+    position: relative;
+    left: 10%;
+    width: 82%;
+    height: 360px;
+    margin-bottom: 20%;
+  }
+
+.sliderTitle{
+    margin-left: 10%;
+    margin-top: 15%;
+}
+  
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    display: grid;
+    
+  }
+  
+.slider-inner {
+    position: absolute;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column-gap: 15px;
+  }
+  
+.item {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+    height: 98%;
+    margin: 0%;
+    display: grid;
+    grid-template-rows: (3, 1fr);
+    border: 2px solid rgba(119, 123, 158);
+  }
+
+.item article{
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-align: center; 
+    grid-area: 2 / 1 / 4 / 2;
+}
+
+#npc .slider{
+    position: absolute;
+  display: flex;
+  justify-content: space-around;
+  cursor: grabbing;
+}
+
+#npc .slider .item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+figcaption{
+    text-align: center;
+}
+.card_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.card_img img{
+    justify-content: center;
+    
+}
+
+.card_title{
+    color: rgba(203, 208, 255, 1);
+}
+  
+.progress-bar {
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    height: 32.97px;
+    width: 100%;
+    background: #D9D9D9;
+    border-radius: 20px;
+  }
+  
+.prog-bar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #596AFE;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+  
+.slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .lore{
+    display: flex;
+  }
