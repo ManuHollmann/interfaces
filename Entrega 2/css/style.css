@@ -95,6 +95,11 @@ body {
   -o-transform: scale(1.1);
 }
 
+/*
+====================
+*HERO SECTION
+====================
+*/
 .hero-small-title {
   display: flex;
   align-items: center;
@@ -112,16 +117,95 @@ body {
   margin-right: 10rem;
 }
 
-.hero-section {
+.hero-section, .carousel-section {
   margin-left: 10rem;
   display: flex;
   align-items: center;
 }
 
+/*
+====================
+*CAROUSEL SECTION
+====================
+*/
 
+.game-card {
+  background-color: var(--black-color);
+  margin-right: 2.2rem;
+  max-width: 14%;
+  max-height: 100%;
+}
 
+.score-container {
+  background-color: #7B61FF;
+  display: flex;
+  align-items: center;
+  border-bottom-right-radius: 25px;
+  width: 110%;
+  padding: .4rem;
+}
 
+.score-container>img {
+  padding-right: .4rem;
+}
 
+.game-card h3, .game-card p {
+  padding: .4rem;
+  padding-left: 1rem;
+  padding-bottom: 2rem;
+  text-align: start;
+}
+
+.game-card h3 {
+  font-size: 25px;
+}
+
+.game-card p {
+  padding-bottom: 3rem;
+  color: var(--first-light3-color);
+  font-size: 15px;
+}
+
+.game-card button {
+  font-size: 20px;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  margin-bottom: .7rem;
+  width: 50%;
+}
+
+.price {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.price-container {
+  display: flex;
+  padding-left: 1rem;
+}
+
+.price-container button {
+  margin-right: 1rem;
+  background-color: var(--accent-color);
+  color: var(--black-color);
+}
+
+.price-container button:hover {
+  background-color: var(--accent-shadow1-color);
+}
+
+.space {
+  height: 2.88rem;
+  padding-bottom: 0;
+}
+
+.premiere-btn {
+  background-color: var(--second-color);
+}
+
+.premiere-btn:hover {
+  background-color: var(--second-light1-color);
+}
 
 
 /*-------------------------------------------------------*/
@@ -438,7 +522,7 @@ footer {
   margin-bottom: 1rem;
 }
 
-.fat-footer>div>p, b {
+.fat-footer>div>p, .fat-footer>div>b {
   padding-bottom: 1.5rem;
 }
 
