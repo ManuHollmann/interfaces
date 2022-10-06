@@ -1,43 +1,55 @@
 window.addEventListener("scroll", checkScroll)
 checkScroll()
 
-const slider = document.querySelector('.slider-inner');
-const progressBar = document.querySelector('.prog-bar-inner');
+const slider = document.querySelectorAll('.slider-inner');
+const progressBar = document.querySelectorAll('.prog-bar-inner');
 
 let sliderGrabbed = false;
 
-slider.parentElement.addEventListener('scroll', (e) => {
-    progressBar.style.width  = `${getScrollPercentage()}%`
+slider.forEach(x=>{
+  x.parentElement.addEventListener('scroll', (e) => {
+    progressBar.forEach(y =>{
+      if(x.dataset.scroll == y.dataset.progres){
+        y.style.width  = `${(x.parentElement.scrollLeft / ( x.parentElement.scrollWidth - x.parentElement.clientWidth) ) * 100}%`
+      }
+    })
+  })
 })
 
-slider.addEventListener('mousedown', (e) => {
+slider.forEach(x =>{
+  x.addEventListener('mousedown', (e) => {
     sliderGrabbed = true;
-    slider.style.cursor = 'grabbing';
+    x.style.cursor = 'grabbing';
+  })
 })
 
-slider.addEventListener('mouseup', (e) => {
+slider.forEach(x => {
+  x.addEventListener('mouseup', (e) => {
     sliderGrabbed = false;
-    slider.style.cursor = 'grab';
+    x.style.cursor = 'grab';
+  })
 })
 
-slider.addEventListener('mouseleave', (e) => {
+slider.forEach(x => {
+  x.addEventListener('mouseleave', (e) => {
     sliderGrabbed = false;
+  })
 })
 
-slider.addEventListener('mousemove', (e) => {
+slider.forEach(x =>{
+  x.addEventListener('mousemove', (e) => {
     if(sliderGrabbed){
-        slider.parentElement.scrollLeft -= e.movementX;
+        x.parentElement.scrollLeft -= e.movementX;
     }
+  })
 })
 
-slider.addEventListener('wheel', (e) =>{
+slider.forEach(x => {
+  x.addEventListener('wheel', (e) =>{
     e.preventDefault()
-    slider.parentElement.scrollLeft += e.deltaY;
+    x.parentElement.scrollLeft += e.deltaY;
+  })
 })
-
-function getScrollPercentage(){
-   return ((slider.parentElement.scrollLeft / (slider.parentElement.scrollWidth - slider.parentElement.clientWidth) ) * 100);
-}
 
 function boundCards() {
     const container_rect = container.getBoundingClientRect();
