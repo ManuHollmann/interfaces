@@ -95,6 +95,36 @@ body {
   -o-transform: scale(1.1);
 }
 
+.hero-small-title {
+  display: flex;
+  align-items: center;
+  color: var(--accent-color);
+}
+
+.hero-title {
+  padding-right: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  text-align: start;
+}
+
+.hero-img {
+  margin-right: 10rem;
+}
+
+.hero-section {
+  margin-left: 10rem;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+
+
+/*-------------------------------------------------------*/
 /*
 ====================
 *HEADER & NAV BAR
