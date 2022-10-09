@@ -1,8 +1,28 @@
-window.addEventListener("scroll", checkScroll)
+setTimeout(function(){
+  window.addEventListener("scroll", checkScroll)
 checkScroll()
+}, 5300);
 
 const slider = document.querySelectorAll('.slider-inner');
 const progressBar = document.querySelectorAll('.prog-bar-inner');
+let number = document.querySelector('.number');
+
+let num = 0;
+let counter = setInterval(countLoad, 50, num)
+
+
+function countLoad(){
+  
+  if(num === 100){
+    clearInterval(counter)
+    document.querySelector('.circular').style.display = 'none'
+    document.querySelector('.container').style.display = 'block';
+  }
+  else{
+    num++;
+    number.innerHTML = num + "<p>%</p>";
+  }
+}
 
 let sliderGrabbed = false;
 
