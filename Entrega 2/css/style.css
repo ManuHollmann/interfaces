@@ -37,9 +37,9 @@
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   background-color: var(--background-color);
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .linkss {
@@ -95,119 +95,6 @@ body {
   -o-transform: scale(1.1);
 }
 
-/*
-====================
-*HERO SECTION
-====================
-*/
-.hero-small-title {
-  display: flex;
-  align-items: center;
-  color: var(--accent-color);
-}
-
-.hero-title {
-  padding-right: 1rem;
-  margin-left: 1rem;
-  margin-top: 1rem;
-  text-align: start;
-}
-
-.hero-img {
-  margin-right: 10rem;
-}
-
-.hero-section, .carousel-section {
-  margin-left: 10rem;
-  display: flex;
-  align-items: center;
-}
-
-/*
-====================
-*CAROUSEL SECTION
-====================
-*/
-
-.game-card {
-  background-color: var(--black-color);
-  margin-right: 2.2rem;
-  max-width: 14%;
-  max-height: 100%;
-}
-
-.score-container {
-  background-color: #7B61FF;
-  display: flex;
-  align-items: center;
-  border-bottom-right-radius: 25px;
-  width: 110%;
-  padding: .4rem;
-}
-
-.score-container>img {
-  padding-right: .4rem;
-}
-
-.game-card h3, .game-card p {
-  padding: .4rem;
-  padding-left: 1rem;
-  padding-bottom: 2rem;
-  text-align: start;
-}
-
-.game-card h3 {
-  font-size: 25px;
-}
-
-.game-card p {
-  padding-bottom: 3rem;
-  color: var(--first-light3-color);
-  font-size: 15px;
-}
-
-.game-card button {
-  font-size: 20px;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  margin-bottom: .7rem;
-  width: 50%;
-}
-
-.price {
-  font-size: 30px;
-  font-weight: bolder;
-}
-
-.price-container {
-  display: flex;
-  padding-left: 1rem;
-}
-
-.price-container button {
-  margin-right: 1rem;
-  background-color: var(--accent-color);
-  color: var(--black-color);
-}
-
-.price-container button:hover {
-  background-color: var(--accent-shadow1-color);
-}
-
-.space {
-  height: 2.88rem;
-  padding-bottom: 0;
-}
-
-.premiere-btn {
-  background-color: var(--second-color);
-}
-
-.premiere-btn:hover {
-  background-color: var(--second-light1-color);
-}
-
-
 /*-------------------------------------------------------*/
 /*
 ====================
@@ -232,7 +119,7 @@ nav>input {
   background-color: #D9D9D9;
   font-size: 20px;
   padding: 0.4rem;
-  width: 40%;
+  width: 20%;
 }
 
 nav>.search-icon {
@@ -241,8 +128,8 @@ nav>.search-icon {
 }
 
 .menu-item.hamburger {
-  margin-right: 10rem;
-  margin-left: 5rem;
+  margin-right: 6%;
+  margin-left: 2.8%;
 }
 
 .menu-item {
@@ -275,6 +162,337 @@ nav>.search-icon {
   padding-left: 0.17rem;
   padding-right: 0.17rem;
 }
+
+
+/* menu hamburguesa*/
+.bars__menu {
+  width: 37.5px;
+  height: 31.5px;
+  margin-right: 10rem;
+  margin-left: 5rem;
+  cursor: pointer;
+}
+
+.bars__menu span {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: rgba(28, 28, 40, 1);
+  margin-top: 6px;
+  transition: all 600ms;
+  transform-origin: 0px 100%;
+}
+
+.activeline1__bars-menu {
+  transform: rotate(45deg) translate(-3px, 0px);
+}
+
+.activeline2__bars-menu {
+  opacity: 0;
+  margin-left: -30px;
+}
+
+.activeline3__bars-menu {
+  transform: rotate(-45deg) translate(-1px, 2px);
+}
+
+nav ul {
+  background: rgba(21, 21, 30, 1);
+  height: 100%;
+  transition: transform .5s;
+  display: grid;
+  transform: translateY(62px);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 20px;
+}
+
+.container-menu {
+  width: 12rem;
+  max-width: 250px;
+  background: #1c1c1c;
+  height: 0;
+  position: absolute;
+  transition: all 500ms ease;
+  transform: translateX(-100%);
+}
+
+.active-container-menu {
+  transform: translate(0);
+  height: 311px;
+}
+
+nav ul li {
+  list-style: none;
+  position: relative;
+  height: 100%;
+  display: contents;
+  --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+nav ul li:hover {
+  --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+nav ul li img {
+  margin-left: 10px;
+}
+
+nav ul li:first-child {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+nav ul li:last-child {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+#categories {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+.item--show:last-child {
+  grid-area: 4 / 1 / 5 / 3;
+}
+
+nav>ul>li>ul {
+  list-style: none;
+  transition: clip-path .3s;
+  clip-path: var(--clip);
+  position: absolute;
+  top: 11rem;
+  bottom: 0;
+  width: 10rem;
+  height: min-content;
+  background: rgba(21, 21, 30, 1);
+}
+
+#categories ul {
+  display: table;
+  height: auto;
+  width: 10rem;
+  top: 7rem;
+}
+
+#categories ul li {
+  display: flex;
+  justify-content: left;
+  text-align: center;
+  left: 20px;
+  text-decoration: none;
+  list-style: none;
+  padding-bottom: 1rem;
+}
+
+#categories ul li a {
+  color: var(--white-color);
+}
+
+nav ul ul {
+  left: 100%;
+}
+
+nav ul li img {
+  margin-top: 10px;
+}
+
+nav ul li span {
+  margin-top: 17px;
+}
+
+
+
+
+/*
+====================
+*HERO SECTION
+====================
+*/
+.header-bar {
+  width: 40px;
+  height: 2px;
+  background: var(--accent-color);
+  border-radius: 100px;
+}
+
+.header-bar.release {
+  background: var(--first-shadow1-color);
+}
+
+.hero-small-title {
+  display: flex;
+  align-items: center;
+  color: var(--accent-color);
+}
+
+.hero-small-title.release {
+  display: flex;
+  align-items: center;
+  color: var(--first-shadow1-color);
+}
+
+.hero-title {
+  padding-right: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  text-align: start;
+  margin-left: 0;
+}
+
+.hero-img>img {
+  width: 100%;
+}
+
+.hero-section, .carousel-section {
+  display: block;
+}
+
+
+
+
+
+
+
+/* =================================================================
+* CAROUSEL SECTION
+=================================================================
+*/
+.category-h2 {
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.carousel-section {
+  flex-wrap: wrap;
+}
+
+.slider-inner.games {
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 1rem;
+  height: 100%;
+}
+
+.slider.games {
+  height: 114%;
+}
+
+.slider-wrap.games {
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  margin-bottom: 4.5rem;
+}
+
+.progress-bar.games {
+  bottom: -3.6rem;
+}
+
+.progress-bar.games.highlight {
+  background: var(--first-light1-color);
+}
+
+
+/*
+====================
+*GAME CARD
+====================
+*/
+
+.game-card {
+  background-color: var(--black-color);
+  min-width: 7rem;
+  max-width: 7rem;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+.score-container {
+  background-color: rgba(123, 97, 255, 1);
+  display: flex;
+  align-items: center;
+  border-bottom-right-radius: 25px;
+  width: 6%;
+  padding: .2rem;
+  margin-top: .5rem;
+  position: absolute;
+  font-size: 0.5rem;
+}
+
+.score-container>img {
+  padding-right: .25rem;
+  width: 0.9rem;
+}
+
+.game-card h3, .game-card p {
+  padding: .4rem;
+  text-align: start;
+}
+
+.game-card h3 {
+  font-size: 0.6rem;
+}
+
+.game-card p {
+  color: var(--first-light3-color);
+  font-size: 0.4rem;
+  padding-bottom: 1rem;
+}
+
+.game-card button {
+  width: 70%;
+  height: 10%;
+  align-items: center;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  padding-left: 0.4rem;
+  font-size: 0.7rem;
+}
+
+.price-container button {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  padding: 0.12rem;
+  background-color: var(--accent-color);
+  color: var(--black-color);
+}
+
+.price-container button:hover {
+  background-color: var(--accent-shadow1-color);
+}
+
+.one-line-title-card {
+  margin-bottom: 0.6rem;
+}
+
+.premiere-btn {
+  background-color: var(--second-color);
+}
+
+.premiere-btn:hover {
+  background-color: var(--second-light1-color);
+}
+
+
+
+
+
+
+
+
+/*
+===========================================================
+*GAME 4 LINES PAGE
+======================================================
+*/
+
 
 /*
 ====================
@@ -357,7 +575,84 @@ nav>.search-icon {
   justify-content: center;
   align-items: center;
   display: flex;
+  width: 472px;
+  height: 306px;
 }
+
+
+/*
+*Gallery
+*/
+
+.game-images-container {
+  margin-bottom: 25rem;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none inside;
+}
+
+ul.slider-gallery {
+  position: relative;
+}
+
+ul.slider-gallery img {
+  opacity: 0;
+  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  position: absolute;
+  background: var(--background-color);
+  min-width: 472px;
+  max-width: 472px;
+  min-height: 306px;
+  max-height: 306px;
+}
+
+ul.slider-gallery img:first-child {
+  opacity: 1;
+}
+
+ul.slider-gallery img:target {
+  opacity: 1;
+}
+
+.nav-gallery {
+  position: relative;
+  top: 320px;
+  left: 100px;
+}
+
+.menu-gallery li {
+  display: inline;
+  margin-left: 45px;
+}
+
+.menu-gallery a {
+  color: var(--white-color);
+  text-decoration: none;
+  padding: 5px;
+  border: var(--second-light3-color) 1px solid;
+  transition: background-color 2s;
+  -webkit-transition: background-color 2s;
+  -moz-transition: background-color 2s;
+  -ms-transition: background-color 2s;
+  -o-transition: background-color 2s;
+}
+
+.menu-gallery a:hover {
+  background-color: var(--first-color);
+}
+
+.menu-gallery a:focus {
+  color: var(--grey-color);
+}
+
+
 
 /*
 ====================
@@ -495,6 +790,7 @@ footer {
 .fat-footer {
   padding-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .fat-footer p {
@@ -512,9 +808,10 @@ footer {
 }
 
 .fat-footer>div {
-  width: 24%;
   display: flex;
   flex-direction: column;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 .fat-footer>div>b {
@@ -527,8 +824,8 @@ footer {
 }
 
 .news {
-  padding-left: 2rem;
-  margin-right: 20rem;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
 }
 
 .first-section-footer {
@@ -540,7 +837,7 @@ footer {
   display: flex;
   align-items: center;
   width: 40%;
-  height: 120%;
+  height: 100%;
 }
 
 .ps-footer {
@@ -552,10 +849,8 @@ footer {
 }
 
 .social-networks {
-  float: right;
   display: flex;
-  justify-content: space-between;
-  padding-right: 4rem;
+  justify-content: center;
 }
 
 .social-networks img {
@@ -570,7 +865,15 @@ footer {
   color: var(--grey-color);
 }
 
-/*----------------------------------------------------------*/
+
+
+
+
+/*
+===========================================================
+*PREMIERE GAME PAGE
+==========================================================
+*/
 
 
 .container {
@@ -609,18 +912,16 @@ footer {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 2rem;
   font-weight: auto;
-  line-height: 80px;
+  line-height: 3rem;
   letter-spacing: -1.5px;
   text-align: center;
-  margin: 4ch;
 }
 
 h2 {
   text-align: start;
   padding: 10% 10.5% 0%;
-  font-size: 40px;
 }
 
 h3 {
@@ -727,6 +1028,80 @@ article h3, p {
 
 /*==============================================================================================================================*/
 
+.slider-wrap {
+  position: relative;
+  left: 10%;
+  width: 82%;
+  height: 360px;
+  margin-bottom: 20%;
+}
+
+.sliderTitle {
+  margin-left: 10%;
+  margin-top: 15%;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  display: grid;
+
+}
+
+.slider-inner {
+  position: absolute;
+  justify-content: space-around;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column-gap: 15px;
+  height: 90%;
+}
+
+.item {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 95%;
+  margin: 0%;
+  display: grid;
+  grid-template-rows: (3, 1fr);
+  border: 2px solid rgba(119, 123, 158);
+  top: 5%;
+  left: 5%;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  height: 1rem;
+  width: 100%;
+  background: #D9D9D9;
+  border-radius: 20px;
+}
+
+.prog-bar-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #596AFE;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
 
 .carrousel {
   width: 80%;
@@ -737,38 +1112,6 @@ article h3, p {
 .carrousel::-webkit-scrollbar-button {
   border-radius: 20px;
   color: rgba(89, 106, 254, 1);
-}
-
-.slider {
-  display: inline-flex;
-  text-align: center;
-  overflow-y: hidden;
-  margin-bottom: 30px;
-}
-
-.slider section {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  border: 2px solid rgba(119, 123, 158);
-  height: 348px;
-  width: 237px;
-  left: 0px;
-  top: 0px;
-  border-radius: 0px;
-  margin: 1vh;
-}
-
-.slider section article {
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.5px;
-  text-align: center;
-  grid-area: 2 / 1 / 4 / 2;
 }
 
 .card_img {
@@ -804,4 +1147,153 @@ iframe {
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+@media only screen and (min-width: 1440px) {
+  body {
+    font-size: 1.12rem;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin: 4ch;
+  }
+
+  .menu-item.hamburger {
+    margin-right: 10rem;
+    margin-left: 5rem;
+  }
+
+  nav>input {
+    width: 40%;
+  }
+
+  .hero-section, .carousel-section {
+    margin-left: 10rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-img {
+    margin-right: 10rem;
+    width: 100%;
+  }
+
+  .hero-img>img {
+    width: 85%;
+  }
+
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .game-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .slider-wrap.games {
+    width: 89%;
+    height: 25rem;
+    margin-bottom: 10rem;
+  }
+
+  .slider-inner.games {
+    grid-column-gap: 8rem;
+  }
+
+  .progress-bar.games {
+    bottom: -8rem;
+  }
+
+  .progress-bar {
+    height: 32.97px;
+    border-radius: 20px;
+  }
+
+
+  .game-card {
+    margin-right: 4rem;
+    max-width: 150%;
+    min-width: 150%;
+    max-height: 100%;
+  }
+
+  .score-container {
+    width: 5%;
+    font-size: 1.3rem;
+  }
+
+  .score-container>img {
+    padding-right: 0.4rem;
+    width: 45%;
+  }
+
+  .game-card h3, .game-card p {
+    padding: 0.4rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    text-align: start;
+  }
+
+  .game-card h3 {
+    font-size: 25px;
+  }
+
+  .one-line-title-card {
+    margin-bottom: 1.80rem;
+  }
+
+  .game-card p {
+    padding-bottom: 6rem;
+    font-size: 15px;
+  }
+
+  .game-card button {
+    font-size: 20px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
+    width: 50%;
+    height: auto;
+  }
+
+  .price-container {
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    align-items: baseline;
+  }
+
+  .price {
+    font-size: 30px;
+  }
+
+  .price-container button {
+    margin-left: 3.5rem;
+  }
+
+  .fat-footer {
+    flex-wrap: nowrap;
+  }
+
+  .fat-footer>div {
+    width: 24%;
+  }
+
+  .news {
+    padding-left: 2rem;
+    margin-right: 20rem;
+    margin-bottom: 0;
+  }
+
+  .first-section-footer>button {
+    width: 40%;
+    height: 120%;
+  }
+
+  .social-networks {
+    float: right;
+    justify-content: space-between;
+    padding-right: 4rem;
+  }
 }

@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body class="container">
@@ -14,21 +15,70 @@
     <nav>
       <a href="http://127.0.0.1:5500/index.html" class="menu-item clic-item"><img src="./assets/logo.png"
           alt="Logo de la pagina"></a>
-      <img src="./assets/hamburger-icon.png" alt="Hamburger icon" class="menu-item clic-item hamburger"></img>
+      <div class="bars__menu ">
+        <span class="line1__bars-menu"></span>
+        <span class="line2__bars-menu"></span>
+        <span class="line3__bars-menu"></span>
+      </div>
       <input type="text" placeholder="Buscar...">
       <img src="./assets/search-icon.png" alt="Search icon" class="search-icon clic-item">
     </nav>
   </header>
-  <br>
-  <br>
-  <br>
+
+  <nav class="container-menu">
+    <ul>
+      <li>
+        <img src="./sources/Icons/account.svg" alt="Icono de perfil">
+        <span>Perfil</span>
+      </li>
+      <li>
+        <img src="./sources/Icons/Gamepad.svg" alt="Icono de favoritos">
+        <span>Favoritos</span>
+      </li>
+      <li class="item--show" id="categories">
+        <img src="./sources/Icons/darhboard.svg" alt="Icono de categorias">
+        <span>Categorias</span>
+        <ul>
+          <li><a href="#">Ultimos jugados</a></li>
+          <li>
+            <p>Recomendados</p>
+          </li>
+          <li>
+            <p>Accion</p>
+          </li>
+          <li>
+            <p>Deporte</p>
+          </li>
+          <li>
+            <p>RPG</p>
+          </li>
+        </ul>
+      </li>
+      <li class="item--show">
+        <img src="./sources/Icons/Subtract.svg" alt="Icono de redes sociales">
+        <span>Redes</span>
+        <ul>
+          <li id="1"><img src="./sources/Icons/twitter.svg" alt="Icono de Twitter" width="30"
+              height="40"><span>Twitter</span></li>
+          <li id="2"><img src="./sources/Icons/instagram.svg" alt="Icono de Instagram" width="30" height="40">
+            <span>Instagram</span>
+          </li>
+          <li id="3"><img src="./sources/Icons/facebook.svg" alt="Icono de Facebook" width="20"
+              height="30"><span>Facebook</span></li>
+          <li id="4"><img src="./sources/Icons/youtube.svg" alt="Icono de Youtube" width="30"
+              height="40"><span>Youtube</span></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
   <br>
   <br>
   <br>
   <section class="hero-section">
     <div>
       <div class="hero-small-title">
-        <img src="./assets/header-bar.png" alt="orange bar">
+        <div class="header-bar"></div>
         <p>EXPLORA UNA NUEVA DIMENSION</p>
       </div>
       <div>
@@ -40,63 +90,518 @@
     </div>
   </section>
   <section class="carousel-section">
-    <div class="game-card">
-      <div class="score-container">
-        <img src="./assets/star-icon.png" alt="star icon">
-        <b>4.5</b>
+
+
+    <h2 class="category-h2">Ultimos jugados</h2>
+
+    <div class="slider-wrap games">
+      <div class="slider games">
+        <div class="slider-inner games" data-scroll="last-played">
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.5</b>
+            </div>
+            <div>
+              <img src="./assets/conecta-espacial-4.png" alt="conecta espacial 4 image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Conecta Espacial 4</h3>
+            </div>
+            <div>
+              <p>PC</p>
+            </div>
+            <a href="https://manuhollmann.github.io/interfaces/Entrega%202/game.html"><button
+                class="btn">Jugar</button></a>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.9</b>
+            </div>
+            <div>
+              <img src="./assets/destiny-2.png" alt="destiny 2 image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Destiny 2</h3>
+            </div>
+            <div>
+              <p>Legendary Edition (PC)</p>
+            </div>
+            <button class="btn">Jugar</button>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>3.9</b>
+            </div>
+            <div>
+              <img src="./assets/ac-unity.png" alt="assasins creed unity image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Assassin's Creed Unity</h3>
+            </div>
+            <div>
+              <p>Legendary Edition (PC)</p>
+            </div>
+            <button class="btn">Jugar</button>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.7</b>
+            </div>
+            <div>
+              <img src="./assets/tw-warhammer.png" alt="Total War: WARHAMMER image" width="100%">
+            </div>
+            <div>
+              <h3>Total War: WARHAMMER</h3>
+            </div>
+            <div>
+              <p>Legendary Edition (PC)</p>
+            </div>
+            <button class="btn">Jugar</button>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.9</b>
+            </div>
+            <div>
+              <img src="./assets/elden-ring.png" alt="Elden Ring image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Elden Ring</h3>
+            </div>
+            <div>
+              <p>PC</p>
+            </div>
+            <button class="btn">Jugar</button>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="./assets/conecta-espacial-4.png" alt="destiny 2 image" width="100%">
+      <div class="progress-bar games">
+        <div class="prog-bar-inner" data-progres="last-played"></div>
       </div>
-      <div>
-        <h3>Conecta Espacial 4</h3>
-        <h3 class="space"></h3>
-      </div>
-      <div>
-        <p>PC</p>
-      </div>
-      <a href="https://manuhollmann.github.io/interfaces/Entrega%202/game.html"><button class="btn">Jugar</button></a>
     </div>
-    <div class="game-card">
-      <div class="score-container">
-        <img src="./assets/star-icon.png" alt="star icon">
-        <b>0.0</b>
+
+
+
+    <h2 class="category-h2">A jugadores como vos les gusta</h2>
+
+    <div class="slider-wrap games">
+      <div class="slider games">
+        <div class="slider-inner games" data-scroll="recomendations">
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.5</b>
+            </div>
+            <div>
+              <img src="./assets/skyrim.png" alt="destiny 2 image" width="100%">
+            </div>
+            <div>
+              <h3>The Elder Scrolls V: Skyrim</h3>
+            </div>
+            <div>
+              <p>PC, PS4, PS5, Xbox One / Series x</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">3</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>0.0</b>
+            </div>
+            <div>
+              <img src="./assets/hollow-knight.png" alt="hollow knight image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Hollow Knight</h3>
+            </div>
+            <div>
+              <p>PC</p>
+            </div>
+            <a href="https://manuhollmann.github.io/interfaces/Entrega%202/release.html"><button
+                class="btn premiere-btn">Estreno</button></a>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.8</b>
+            </div>
+            <div>
+              <img src="./assets/final-fantasy-xiv.png" alt="Final Fantasy XIV image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Final Fantasy XIV</h3>
+            </div>
+            <div>
+              <p>PC</p>
+            </div>
+            <button class="btn">Jugar</button>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>3.3</b>
+            </div>
+            <div>
+              <img src="./assets/battlefield-v.png" alt="Battlefield V XIV image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Battlefield V</h3>
+            </div>
+            <div>
+              <p>Online edition (PC)</p>
+            </div>
+            <button class="btn">Jugar</button>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>3.0</b>
+            </div>
+            <div>
+              <img src="./assets/batman-arkham-night.png" alt="Batman: Arkham Knight image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Batman: Arkham Knight</h3>
+            </div>
+            <div>
+              <p>PC, PS4, PS5, Xbox One / Series x</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">3</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="./assets/hollow-knight.png" alt="destiny 2 image" width="100%">
+      <div class="progress-bar games highlight">
+        <div class="prog-bar-inner" data-progres="recomendations"></div>
       </div>
-      <div>
-        <h3>Hollow Knight</h3>
-        <h3 class="space"></h3>
-      </div>
-      <div>
-        <p>PC</p>
-      </div>
-      <a href="https://manuhollmann.github.io/interfaces/Entrega%202/release.html"><button
-          class="btn premiere-btn">Estreno</button></a>
     </div>
-    <div class="game-card">
-      <div class="score-container">
-        <img src="./assets/star-icon.png" alt="star icon">
-        <b>4.5</b>
+
+
+    <h2 class="category-h2">Juegos de Accíon</h2>
+
+    <div class="slider-wrap games">
+      <div class="slider games">
+        <div class="slider-inner games" data-scroll="action">
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>2.1</b>
+            </div>
+            <div>
+              <img src="./assets/cod-vanguard.png" alt="Call of Duty: Vanguard image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Call of Duty: Vanguard</h3>
+            </div>
+            <div>
+              <p>Online complete edition (PC)</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">1</span>.50</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>3.9</b>
+            </div>
+            <div>
+              <img src="./assets/mortal-kombat-11.png" alt="Mortal Kombat 11 image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Mortal Kombat 11</h3>
+            </div>
+            <div>
+              <p>Ultimate edition (PC)</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">4</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>3.3</b>
+            </div>
+            <div>
+              <img src="./assets/battlefield-v.png" alt="Battlefield V XIV image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Battlefield V</h3>
+            </div>
+            <div>
+              <p>Online edition (PC)</p>
+            </div>
+            <button class="btn">Jugar</button>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>3.6</b>
+            </div>
+            <div>
+              <img src="./assets/back-4-blood.png" alt="Back 4 Blood image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Back 4 Blood</h3>
+            </div>
+            <div>
+              <p>Online complete edition (PC)</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">4</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.4</b>
+            </div>
+            <div>
+              <img src="./assets/gauntlet.png" alt="Gauntlet image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Gauntlet</h3>
+            </div>
+            <div>
+              <p>Online complete edition (PC)</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">2</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="./assets/skyrim.png" alt="destiny 2 image" width="100%">
-      </div>
-      <div>
-        <h3>The Elder Scrolls V: Skyrim</h3>
-      </div>
-      <div>
-        <p>PC, PS4, PS5, Xbox One, Xbox Series X</p>
-      </div>
-      <div class="price-container">
-        <b>$<span class="price">3</span>.00</b>
-        <button class="btn">Comprar</button>
+      <div class="progress-bar games">
+        <div class="prog-bar-inner" data-progres="action"></div>
       </div>
     </div>
-    <section></section>
-    <section></section>
-    <section></section>
+
+
+
+    <h2 class="category-h2">Juegos de Deporte</h2>
+
+    <div class="slider-wrap games">
+      <div class="slider games">
+        <div class="slider-inner games" data-scroll="sport">
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>1.5</b>
+            </div>
+            <div>
+              <img src="./assets/madden-19.png" alt="Madden 19 image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Madden 19</h3>
+            </div>
+            <div>
+              <p>PC, PS4, PS5, Xbox One / Series x</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">5</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>2.0</b>
+            </div>
+            <div>
+              <img src="./assets/nhl-17.png" alt="National Hockey League 17 image" width="100%">
+            </div>
+            <div>
+              <h3>National Hockey League 17</h3>
+            </div>
+            <div>
+              <p>Ultimate edition (PC)</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">3</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.5</b>
+            </div>
+            <div>
+              <img src="./assets/fifa-16.png" alt="FIFA 16 image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">FIFA 16</h3>
+            </div>
+            <div>
+              <p>PS4</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">6</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>3.9</b>
+            </div>
+            <div>
+              <img src="./assets/pes-2019.png" alt="Pro Evolution Soccer 2019 image" width="100%">
+            </div>
+            <div>
+              <h3>Pro Evolution Soccer 2019</h3>
+            </div>
+            <div>
+              <p>Online complete edition (PC)</p>
+            </div>
+            <button class="btn">Jugar</button>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>3.6</b>
+            </div>
+            <div>
+              <img src="./assets/nba-live-19.png" alt="NBA Live 19 image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">NBA Live 19</h3>
+            </div>
+            <div>
+              <p>The One edition (Xbox One)</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">3</span>.80</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="progress-bar games">
+        <div class="prog-bar-inner" data-progres="sport"></div>
+      </div>
+    </div>
+
+
+
+    <h2 class="category-h2">Juegos RPG</h2>
+
+    <div class="slider-wrap games">
+      <div class="slider games">
+        <div class="slider-inner games" data-scroll="rpg">
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.5</b>
+            </div>
+            <div>
+              <img src="./assets/skyrim.png" alt="destiny 2 image" width="100%">
+            </div>
+            <div>
+              <h3>The Elder Scrolls V: Skyrim</h3>
+            </div>
+            <div>
+              <p>PC, PS4, PS5, Xbox One / Series x</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">3</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.8</b>
+            </div>
+            <div>
+              <img src="./assets/final-fantasy-xiv.png" alt="Final Fantasy XIV image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Final Fantasy XIV</h3>
+            </div>
+            <div>
+              <p>PC</p>
+            </div>
+            <button class="btn">Jugar</button>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>3.0</b>
+            </div>
+            <div>
+              <img src="./assets/batman-arkham-night.png" alt="Batman: Arkham Knight image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Batman: Arkham Knight</h3>
+            </div>
+            <div>
+              <p>PC, PS4, PS5, Xbox One / Series x</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">3</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>3.5</b>
+            </div>
+            <div>
+              <img src="./assets/horizon-forbidden-west.png" alt="Horizon: Forbidden West image" width="100%">
+            </div>
+            <div>
+              <h3>Horizon: Forbidden West</h3>
+            </div>
+            <div>
+              <p>Complete edition (PC)</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">3</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="score-container">
+              <img src="./assets/star-icon.png" alt="star icon">
+              <b>4.4</b>
+            </div>
+            <div>
+              <img src="./assets/gauntlet.png" alt="Gauntlet image" width="100%">
+            </div>
+            <div>
+              <h3 class="one-line-title-card">Gauntlet</h3>
+            </div>
+            <div>
+              <p>Online complete edition (PC)</p>
+            </div>
+            <div class="price-container">
+              <b>$<span class="price">2</span>.00</b>
+              <button class="btn">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="progress-bar games">
+        <div class="prog-bar-inner" data-progres="rpg"></div>
+      </div>
+    </div>
   </section>
   <footer>
     <div class="fat-footer">
@@ -144,6 +649,7 @@
     </div>
     <p class="last-text-footer">Copyright 2022</p>
   </footer>
+  <script src="js/release.js"></script>
 </body>
 
 </html>
