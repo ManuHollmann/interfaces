@@ -6,208 +6,278 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/release.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' />
     <title>interfaces</title>
 </head>
 
-<body class="container">
-    <div class="hero">
-        <img class="logo" src="./sources/logo_main.png" alt="Logo del juego">
-        <a href="http://127.0.0.1:5500/Entrega%202/index.html" id="sticky_logo"><img src="./sources/sticky logo.svg"
-                alt="Logo de la pagina"></a>
-        <button class="animated button"> <strong>Precompra hoy!</strong> </button>
-    </div>
-    <div>
-        <h1>Deciende a la oscuridad</h1>
+<body>
 
-        <section>
-            <img class="gameSectionA" src="./sources/mines.jfif" alt="las minas">
-            <article class="gameSectionB">
-                <h3>Afronta las profundidades de un reino olvidado</h3>
-                <p>Debajo de la ciudad de Dirtmouth, que se desvanece, duerme un vasto y antiguo reino. Muchos se ven
-                    arrastrados bajo la superficie, en busca de riquezas, de gloria o de respuestas a viejos secretos.
-                </p>
-                <p>Como el enigmático Caballero, atravesarás las profundidades, desentrañarás sus misterios y vencerás
-                    sus males.</p>
-            </article>
+    <article class="circular">
+        <section class="percent">
+            <div class="dot"></div>
+            <svg>
+                <circle cx="70" cy="70" r="70" class="inside"></circle>
+                <circle cx="70" cy="70" r="70" class="inside"></circle>
+            </svg>
+            <h2 class="number">0<p>%</p>
+            </h2>
         </section>
-
-        <section>
-            <article class="gameSectionA" id="typeBArticle">
-                <h3>Usa tus habilidades y reflejos para sobrevivir</h3>
-                <p>Hollow Knight es una desafiante aventura de acción en 2D. Explorarás cavernas retorcidas, lucharás
-                    contra criaturas contaminadas y escaparás de intrincadas trampas, todo ello para resolver un antiguo
-                    misterio oculto durante mucho tiempo.</p>
-                <ul>
-                    <li>Explora vastos mundos interconectados</li>
-                    <li>Encuentra una extraña colección de amigos y enemigos.</li>
-                    <li>Evoluciona con nuevas y poderosas habilidades</li>
-                </ul>
-            </article>
-            <img class="gameSectionB" src="./sources/false_knigth.jfif" alt="lucha contra el falso caballero">
-        </section>
-
-        <section>
-            <img class="gameSectionA" src="./sources/lake_of_unn.jfif" alt="lago de unn">
-            <article class="gameSectionB">
-                <h3>Arte casi como dibujado a mano</h3>
-                <p>El mundo de Hollow Knight cobra vida con detalles vívidos y sombríos, y sus cavernas están llenas de
-                    criaturas extrañas y aterradoras, animadas a mano en un estilo 2D tradicional.</p>
-                <p>Cada nueva zona que descubrirás es única y extraña, y está repleta de nuevas criaturas y personajes
-                    que descubrir. Merece la pena explorar el mundo de Hollow Knight solo para contemplar las vistas y
-                    descubrir nuevas maravillas escondidas fuera de los caminos trillados.</p>
-            </article>
-        </section>
-    </div>
-
-    <h2>Habilidades</h2>
-    <div class="carrousel">
-        <div class="slider">
-            <section>
-                <div class="card_img"><img src="./sources/skills/capa-ala-de-polilla.png" height="66px"
-                        alt="capa ala de polilla"></div>
-                <article>
-                    <p class="card_title">CAPA DE ALA DE POLILLA</p>
-                    <p>Capa hecha de hebras de ala de polilla. Permite al portador realizar un Avance Rápido en el suelo
-                        o por el aire.</p>
-                </article>
-            </section>
-            <section>
-                <div class="card_img"><img src="./sources/skills/garra-de-mantis.png" height="66px"
-                        alt="garra de mantis"></div>
-                <article>
-                    <p class="card_title">GARRA DE MANTIS</p>
-                    <p>Garra tallada a partir de hueso. Permite al portador colgarse en las paredes e impulsarse desde
-                        ellas.</p>
-                </article>
-            </section>
-            <section>
-                <div class="card_img"><img src="./sources/skills/corazon-de-cristal.png" height="66px"
-                        alt="corazon de cristal"></div>
-                <article>
-                    <p class="card_title">CORAZON DE CRISTAL</p>
-                    <p>Es posible canalizar la energía del cristal para lanzar al portador hacia delante a velocidades
-                        peligrosas.</p>
-                </article>
-            </section>
-            <section>
-                <div class="card_img"><img src="./sources/skills/lagrima-de-isma.png" height="78px"
-                        alt="lagrima de isma"></div>
-                <article>
-                    <p class="card_title">LAGRIMA DE ISMA</p>
-                    <p>Cuando se ingiere, proporciona protección frente a los abrasadores estanques ácidos </p>
-                </article>
-            </section>
-            <section>
-                <div class="card_img"><img src="./sources/skills/capa-sombria.png" height="67px" alt="capa sombria>">
-                </div>
-                <article>
-                    <p class="card_title">CAPA SOMBRIA</p>
-                    <p>Capa hecha de hebras de ala de polilla. Permite al portador realizar un Avance Rápido en el suelo
-                        o por el aire.</p>
-                </article>
-            </section>
-            <section>
-                <div class="card_img"><img src="./sources/skills/aguijon-onirico.png" height="114px"
-                        alt="aguijon onirico"></div>
-                <article>
-                    <p class="card_title">AGUIJON ONIRICO</p>
-                    <p>Permite cortar el velo que separa el mundo onírico del real. Puede revelar sueños ocultos o abrir
-                        puertas.</p>
-                </article>
-            </section>
-            <section>
-                <div class="card_img"><img src="./sources/skills/aguijon-onirico-despertado.png" height="114px"
-                        alt="aguijon onirico despertado"></div>
-                <article>
-                    <p class="card_title">AGUIJON ONIRICO DESPERTADO</p>
-                    <p>El Aguijón Onírico se ha despertado por completo y te permite acceder a determinados recuerdos
-                        protegidos.</p>
-                </article>
-            </section>
-            <section>
-                <div class="card_img"><img src="./sources/skills/sentido del mundo.png" height="66px" width="135.22"
-                        alt="sentido del mundo"></div>
-                <article>
-                    <p class="card_title">SENTIDO DEL MUNDO</p>
-                    <p>Porcentaje de finalización visible en el Inventario.</p>
-                </article>
-            </section>
-            <section>
-                <div class="card_img"><img src="./sources/skills/portal onirico.png" height="72px" width="72"
-                        alt="portal onirico"></div>
-                <article>
-                    <p class="card_title">PORTAL ONIRICO</p>
-                    <p>Permite al portador viajar instantáneamente a través de los sueños.</p>
-                </article>
-            </section>
-            <section>
-                <div class="card_img"><img src="./sources/skills/alas-de-monarca.png" height="64px" width="72"
-                        alt="ala de monarca"></div>
-                <article>
-                    <p class="card_title">ALA DE MONARCA</p>
-                    <p>Alas de materia etérea que centellean en la oscuridad. Permite al portador volver a saltar en el
-                        aire.</p>
-                </article>
-            </section>
-        </div>
-    </div>
-
-    <h2>Personajes</h2>
-    <div class="carrousel">
-        <div class="slider">
-            <figure>
-                <img src="./sources/npcs/Cloth.png" alt="Cloth" />
-                <figcaption>Cloth</figcaption>
-            </figure>
-            <figure>
-                <img src="./sources/npcs/Cornifer.png" alt="Cornifer" />
-                <figcaption>Cornifer</figcaption>
-            </figure>
-            <figure>
-                <img src="./sources/npcs/Hornet.png" alt="Hornet" />
-                <figcaption>Hornet</figcaption>
-            </figure>
-            <figure>
-                <img src="./sources/npcs/Señor_seta.png" alt="Señor seta" />
-                <figcaption>Señor seta</figcaption>
-            </figure>
-            <figure>
-                <img src="./sources/npcs/Quirrel.png" alt="Quirrel" />
-                <figcaption>Quirrel</figcaption>
-            </figure>
-            <figure>
-                <img src="./sources/npcs/Tiso.png" alt="Tiso" />
-                <figcaption>Tiso</figcaption>
-            </figure>
-            <figure>
-                <img src="./sources/npcs/Zote_el_Todopoderoso.png" alt="Zote el todopoderoso" />
-                <figcaption>Zote el todopoderoso</figcaption>
-            </figure>
-        </div>
-    </div>
-
-    <h2>Historia</h2>
-    <article class="lore">
-        <p>
-            Antes del reino de Hallownest, había una criatura todopoderosa, EL Destello, que a través de su luz engendró
-            a la tribu de las polillas. Entre todas, crearon el reino de Hallownest, un lugar para que los insectos
-            pudieran pasar sus vidas. Pronto llegaron insectos de todo tipo. La tribu de las Mantis, un pueblo guerrero
-            o la tribu de las Abejas, una sociedad jerarquizada, eran de las muchas especies que llegaron al nuevo
-            reino, y aunque respetaban a Destello como máxima autoridad, las Mantis tenian su propio gobierno, y las
-            abejas se encerraron en su colmena, ajenas a todo lo que pasara en Hallownest.
-        </p>
-        <p>
-            Todo era paz y armonía, o eso parecía...
-        </p>
     </article>
 
-    <iframe src="https://www.youtube.com/embed/0GXyV9EvB_g" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+    <div class="container">
+        <div class="hero">
+            <img class="logo" src="./sources/logo_main.png" alt="Logo del juego">
+            <a href="https://manuhollmann.github.io/interfaces/Entrega%202/" id="sticky_logo"><img
+                    src="./sources/sticky-logo.svg" alt="Logo de la pagina"></a>
+            <button class="animated button"> <strong>Precompra hoy!</strong> </button>
+        </div>
+        <div>
+            <h1>Deciende a la oscuridad</h1>
 
+            <section>
+                <img class="gameSectionA" src="./sources/mines.jfif" alt="las minas">
+                <article class="gameSectionB">
+                    <h3>Afronta las profundidades de un reino olvidado</h3>
+                    <p>Debajo de la ciudad de Dirtmouth, que se desvanece, duerme un vasto y antiguo reino. Muchos se
+                        ven arrastrados bajo la superficie, en busca de riquezas, de gloria o de respuestas a viejos
+                        secretos.</p>
+                    <p>Como el enigmático Caballero, atravesarás las profundidades, desentrañarás sus misterios y
+                        vencerás sus males.</p>
+                </article>
+            </section>
+
+            <section>
+                <article class="gameSectionA" id="typeBArticle">
+                    <h3>Usa tus habilidades y reflejos para sobrevivir</h3>
+                    <p>Hollow Knight es una desafiante aventura de acción en 2D. Explorarás cavernas retorcidas,
+                        lucharás contra criaturas contaminadas y escaparás de intrincadas trampas, todo ello para
+                        resolver un antiguo misterio oculto durante mucho tiempo.</p>
+                    <ul>
+                        <li>Explora vastos mundos interconectados</li>
+                        <li>Encuentra una extraña colección de amigos y enemigos.</li>
+                        <li>Evoluciona con nuevas y poderosas habilidades</li>
+                    </ul>
+                </article>
+                <img class="gameSectionB" src="./sources/false_knigth.jfif" alt="lucha contra el falso caballero">
+            </section>
+
+            <section>
+                <img class="gameSectionA" src="./sources/lake_of_unn.jfif" alt="lago de unn">
+                <article class="gameSectionB">
+                    <h3>Arte casi como dibujado a mano</h3>
+                    <p>El mundo de Hollow Knight cobra vida con detalles vívidos y sombríos, y sus cavernas están llenas
+                        de criaturas extrañas y aterradoras, animadas a mano en un estilo 2D tradicional.</p>
+                    <p>Cada nueva zona que descubrirás es única y extraña, y está repleta de nuevas criaturas y
+                        personajes que descubrir. Merece la pena explorar el mundo de Hollow Knight solo para contemplar
+                        las vistas y descubrir nuevas maravillas escondidas fuera de los caminos trillados.</p>
+                </article>
+            </section>
+            <h2 class="sliderTitle">Habilidades</h2>
+            <div class="slider-wrap">
+                <div class="slider">
+                    <div class="slider-inner" data-scroll="skills">
+                        <section class="item">
+                            <div class="card_img"><img src="./sources/skills/capa-ala-de-polilla.png" height="66px"
+                                    alt="capa ala de polilla"></div>
+                            <article>
+                                <p class="card_title">CAPA DE ALA DE POLILLA</p>
+                                <p>Capa hecha de hebras de ala de polilla. Permite al portador realizar un Avance Rápido
+                                    en el suelo o por el aire.</p>
+                            </article>
+                        </section>
+                        <section class="item">
+                            <div class="card_img"><img src="./sources/skills/garra-de-mantis.png" height="66px"
+                                    alt="garra de mantis"></div>
+                            <article>
+                                <p class="card_title">GARRA DE MANTIS</p>
+                                <p>Garra tallada a partir de hueso. Permite al portador colgarse en las paredes e
+                                    impulsarse desde ellas.</p>
+                            </article>
+                        </section>
+                        <section class="item">
+                            <div class="card_img"><img src="./sources/skills/corazon-de-cristal.png" height="66px"
+                                    alt="corazon de cristal"></div>
+                            <article>
+                                <p class="card_title">CORAZON DE CRISTAL</p>
+                                <p>Es posible canalizar la energía del cristal para lanzar al portador hacia delante a
+                                    velocidades peligrosas.</p>
+                            </article>
+                        </section>
+                        <section class="item">
+                            <div class="card_img"><img src="./sources/skills/lagrima-de-isma.png" height="78px"
+                                    alt="lagrima de isma"></div>
+                            <article>
+                                <p class="card_title">LAGRIMA DE ISMA</p>
+                                <p>Cuando se ingiere, proporciona protección frente a los abrasadores estanques ácidos
+                                </p>
+                            </article>
+                        </section>
+                        <section class="item">
+                            <div class="card_img"><img src="./sources/skills/capa-sombria.png" height="67px"
+                                    alt="capa sombria>"></div>
+                            <article>
+                                <p class="card_title">CAPA SOMBRIA</p>
+                                <p>Capa hecha de hebras de ala de polilla. Permite al portador realizar un Avance Rápido
+                                    en el suelo o por el aire.</p>
+                            </article>
+                        </section>
+                        <section class="item">
+                            <div class="card_img"><img src="./sources/skills/aguijon-onirico.png" height="114px"
+                                    alt="aguijon onirico"></div>
+                            <article>
+                                <p class="card_title">AGUIJON ONIRICO</p>
+                                <p>Permite cortar el velo que separa el mundo onírico del real. Puede revelar sueños
+                                    ocultos o abrir puertas.</p>
+                            </article>
+                        </section>
+                        <section class="item">
+                            <div class="card_img"><img src="./sources/skills/aguijon-onirico-despertado.png"
+                                    height="114px" alt="aguijon onirico despertado"></div>
+                            <article>
+                                <p class="card_title">AGUIJON ONIRICO DESPERTADO</p>
+                                <p>El Aguijón Onírico se ha despertado por completo y te permite acceder a determinados
+                                    recuerdos protegidos.</p>
+                            </article>
+                        </section>
+                        <section class="item">
+                            <div class="card_img"><img src="./sources/skills/sentido del mundo.png" height="66px"
+                                    width="135.22" alt="sentido del mundo"></div>
+                            <article>
+                                <p class="card_title">SENTIDO DEL MUNDO</p>
+                                <p>Porcentaje de finalización visible en el Inventario.</p>
+                            </article>
+                        </section>
+                        <section class="item">
+                            <div class="card_img"><img src="./sources/skills/portal onirico.png" height="72px"
+                                    width="72" alt="portal onirico"></div>
+                            <article>
+                                <p class="card_title">PORTAL ONIRICO</p>
+                                <p>Permite al portador viajar instantáneamente a través de los sueños.</p>
+                            </article>
+                        </section>
+                        <section class="item">
+                            <div class="card_img"><img src="./sources/skills/alas-de-monarca.png" height="64px"
+                                    width="72" alt="ala de monarca"></div>
+                            <article>
+                                <p class="card_title">ALA DE MONARCA</p>
+                                <p>Alas de materia etérea que centellean en la oscuridad. Permite al portador volver a
+                                    saltar en el aire.</p>
+                            </article>
+                        </section>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="prog-bar-inner" data-progres="skills"></div>
+                </div>
+            </div>
+            <h2 class="sliderTitle">Personajes</h2>
+            <div class="slider-wrap" id="npc">
+                <div class="slider">
+                    <div class="slider-inner" data-scroll="npcs">
+                        <figure class="item">
+                            <img src="./sources/npcs/Cloth.png" alt="Cloth" />
+                            <figcaption>Cloth</figcaption>
+                        </figure>
+                        <figure class="item">
+                            <img src="./sources/npcs/Cornifer.png" alt="Cornifer" />
+                            <figcaption>Cornifer</figcaption>
+                        </figure>
+                        <figure class="item">
+                            <img src="./sources/npcs/Hornet.png" alt="Hornet" />
+                            <figcaption>Hornet</figcaption>
+                        </figure>
+                        <figure class="item">
+                            <img src="./sources/npcs/Señor_seta.png" alt="Señor seta" />
+                            <figcaption>Señor seta</figcaption>
+                        </figure>
+                        <figure class="item">
+                            <img src="./sources/npcs/Quirrel.png" alt="Quirrel" />
+                            <figcaption>Quirrel</figcaption>
+                        </figure>
+                        <figure class="item">
+                            <img src="./sources/npcs/Tiso.png" alt="Tiso" />
+                            <figcaption>Tiso</figcaption>
+                        </figure>
+                        <figure class="item">
+                            <img src="./sources/npcs/Zote_el_Todopoderoso.png" alt="Zote el todopoderoso" />
+                            <figcaption>Zote el todopoderoso</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="prog-bar-inner" data-progres="npcs"></div>
+                </div>
+            </div>
+
+            <article class="lore">
+                <h2>Historia</h2>
+                <p>
+                    Antes del reino de Hallownest, había una criatura todopoderosa, EL Destello, que a través de su luz
+                    engendró a la tribu de las polillas. Entre todas, crearon el reino de Hallownest, un lugar para que
+                    los insectos pudieran pasar sus vidas. Pronto llegaron insectos de todo tipo. La tribu de las
+                    Mantis, un pueblo guerrero o la tribu de las Abejas, una sociedad jerarquizada, eran de las muchas
+                    especies que llegaron al nuevo reino, y aunque respetaban a Destello como máxima autoridad, las
+                    Mantis tenian su propio gobierno, y las abejas se encerraron en su colmena, ajenas a todo lo que
+                    pasara en Hallownest.
+                </p>
+                <p>
+                    Todo era paz y armonía, o eso parecía...
+                </p>
+            </article>
+
+            <iframe src="https://www.youtube.com/embed/0GXyV9EvB_g" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+        </div>
+        <footer>
+            <div class="fat-footer">
+                <div class="news">
+                    <b>Obten actualizaciones de tus juegos favoritos</b>
+                    <div class="first-section-footer">
+                        <p>Listo para explorar?</p>
+                        <button class="btn">Suscribite</button>
+                    </div>
+                    <div class="first-section-footer ps-footer">
+                        <p>Terminos & Condiciones</p>
+                        <p class="p-footer">Política de privacidad</p>
+                    </div>
+                </div>
+                <div>
+                    <b>Ranking</b>
+                    <p>Destacados</p>
+                    <p>Novedades</p>
+                    <p>Torneos</p>
+                    <p>Offline</p>
+                </div>
+                <div>
+                    <b>Servicios</b>
+                    <p>Nuestra tienda</p>
+                    <p>Novedades</p>
+                    <p>Suscripciones</p>
+                    <p>Offline</p>
+                </div>
+                <div>
+                    <b>Nosotros</b>
+                    <p>Beneficios</p>
+                    <p>Equipo</p>
+                    <p>Projectos</p>
+                </div>
+                <div>
+                    <b>Ayuda</b>
+                    <p>FAQs</p>
+                    <p>Contacto</p>
+                </div>
+            </div>
+            <div class="social-networks">
+                <img src="./sources/Icons/facebook-small-logo.png" alt="facebook logo" class="clic-item">
+                <img src="./sources/Icons/twitter-small-logo.png" alt="twitter logo" class="clic-item">
+                <img src="./sources/Icons/instagram-small-logo.png" alt="instagram logo" class="clic-item">
+            </div>
+            <p class="last-text-footer">Copyright 2022</p>
+        </footer>
+    </div>
     <script src="js/release.js"></script>
 </body>
-<footer></footer>
 
 </html>

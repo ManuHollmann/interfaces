@@ -51,7 +51,7 @@ body {
   cursor: pointer;
 }
 
-.linkss:hover {
+.linkss:hover, .container-menu ul li span:hover, .container-menu ul li a:hover, .container-menu #categories li a:hover {
   animation-delay: 4s;
   color: var(--first-light1-color);
 }
@@ -138,9 +138,9 @@ nav>.search-icon {
 
 .breadcrumbs {
   font-size: 24px;
-  margin-top: 5rem;
+  margin-top: 1rem;
   background-color: var(--black-color);
-  width: 23%;
+  width: 25%;
   height: 2.5rem;
   border-radius: 25px;
   padding-left: 1rem;
@@ -168,8 +168,8 @@ nav>.search-icon {
 .bars__menu {
   width: 37.5px;
   height: 31.5px;
-  margin-right: 10rem;
-  margin-left: 5rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
   cursor: pointer;
 }
 
@@ -196,7 +196,7 @@ nav>.search-icon {
   transform: rotate(-45deg) translate(-1px, 2px);
 }
 
-nav ul {
+.container-menu ul {
   background: rgba(21, 21, 30, 1);
   height: 100%;
   transition: transform .5s;
@@ -229,6 +229,7 @@ nav ul li {
   height: 100%;
   display: contents;
   --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+  cursor: pointer;
 }
 
 nav ul li:hover {
@@ -879,7 +880,9 @@ footer {
 .container {
   background: rgba(28, 28, 40, 1);
   color: rgba(250, 244, 244, 1);
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  display: none;
 }
 
 .hero {
@@ -1036,11 +1039,6 @@ article h3, p {
   margin-bottom: 20%;
 }
 
-.sliderTitle {
-  margin-left: 10%;
-  margin-top: 15%;
-}
-
 .slider {
   position: absolute;
   top: 0;
@@ -1063,19 +1061,6 @@ article h3, p {
   height: 90%;
 }
 
-.item {
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  width: 230px;
-  height: 95%;
-  margin: 0%;
-  display: grid;
-  grid-template-rows: (3, 1fr);
-  border: 2px solid rgba(119, 123, 158);
-  top: 5%;
-  left: 5%;
-}
 
 .progress-bar {
   position: absolute;
@@ -1114,40 +1099,110 @@ article h3, p {
   color: rgba(89, 106, 254, 1);
 }
 
-.card_img {
+
+
+
+
+
+/*
+============================================
+*Loader
+=================================
+*/
+.circular {
+  z-index: 5;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-area: 1 / 1 / 2 / 2;
-}
-
-.card_img img {
-  justify-content: center;
-
-}
-
-.card_title {
-  color: rgba(203, 208, 255, 1);
-
-}
-
-.lore :last-child {
-  justify-content: center;
-  text-align: center;
-  margin: auto;
-  margin-bottom: 15%;
-  margin-top: 7%;
-  display: flex;
-}
-
-iframe {
-  margin: auto;
-  width: 80%;
-  height: 468.44px;
   justify-content: center;
   align-items: center;
-  display: flex;
+  align-content: center;
+  color: #D9D9D9;
 }
+
+.percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+
+.percent svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 2;
+  stroke: #D9D9D9;
+  transform: translate(5px, 5px);
+}
+
+.dot {
+  position: absolute;
+  inset: 5px;
+  z-index: 10;
+  transform: rotate(360deg);
+  animation: animeDot 5s linear forwards;
+}
+
+.dot::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #596AFE;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%);
+  border-radius: 50%;
+}
+
+.number {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.inside {
+  stroke-dasharray: 440;
+  stroke-dashoffset: 0;
+  animation: load 5s linear forwards
+}
+
+.number p {
+  font-size: 14px;
+}
+
+@keyframes load {
+  from {
+    stroke-dashoffset: 440;
+  }
+
+  to {
+    stroke: #596AFE;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animeDot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 
 @media only screen and (min-width: 1440px) {
   body {
@@ -1160,6 +1215,11 @@ iframe {
   }
 
   .menu-item.hamburger {
+    margin-right: 10rem;
+    margin-left: 5rem;
+  }
+
+  .bars__menu {
     margin-right: 10rem;
     margin-left: 5rem;
   }
