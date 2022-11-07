@@ -23,6 +23,7 @@ class Player {
     return this.teamSide;
   }
 
+  //actualiza el boolean de turno a todas sus fichas segun el mandado por parametro
   setIsPlaying(boolean) {
     this.isPlaying = boolean;
     for (let i = 0; i < this.chips.length; i++) {
@@ -30,6 +31,7 @@ class Player {
     }
   }
 
+  //agrega ficha a su arreglo de fichas
   addChip(chip) {
     this.chips.push(chip);
   }

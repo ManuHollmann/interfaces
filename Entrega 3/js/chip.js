@@ -24,6 +24,7 @@ class Chip {
     this.context = ctx;
   }
 
+  //dibuja la ficha, segun tenga scroke pasado por el constructor en true se agrega o no este, si selected es true se agrega un lineWidth mas grande.
   draw() {
     this.context.beginPath();
     this.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -52,6 +53,7 @@ class Chip {
     this.turn = turn;
   }
 
+  //vuelve la ficha estatica/no estatica, de estar estatica no se puede mover(arrastrar por el usuario)
   setStatics(statics) {
     this.statics = statics;
   }
@@ -60,12 +62,14 @@ class Chip {
     return this.color;
   }
 
+  //se mueve las fichas a la posicion(x,y) pasada por parametro
   move(x, y) {
     this.x = x;
     this.y = y;
     this.draw();
   }
 
+  //devulve boolean si esta ficha fue cliqueada o no, para este se fija en la x e y pasada por parametro y si estas estan drentro del radio de la ficha.
   isClicked(x, y) {
     let _x = this.x - x;
     let _y = this.y - y;

@@ -7,7 +7,6 @@ class Game {
     this.players = [];
     this.chips = [];
     this.insertSpace = [];
-    //this.boardChips;
     this.isDragging = false;
     this.draggingChip = null;
     this.previousSelectedChip = null;
@@ -36,6 +35,7 @@ class Game {
     this.drawChips();
   }
 
+  //se llama cuando se da clic a botón reiniciar, borra el tablero, las fichas y los jugadores, para luego crearlos de vuelta.
   startAgain() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.insertSpace = [];
@@ -54,6 +54,7 @@ class Game {
     }
   }
 
+  //permite cambiar el tablero a 4, 5, 6 o 7 en línea. Para esto se agregan/eliminan columnas y filas
   changeConnect4To(number) {
     if (number == 4) {
       this.lineNumber = 4;
@@ -90,11 +91,16 @@ class Game {
     this.startClock();
   }
 
+  //Comienza la cuenta regresiva con 30seg.
   startClock() {
     this.totalTime = 30;
     this.updateClock(this.totalTime);
   }
 
+  //Si el tiempo es 30 se pone el color opuesto al actual. Si no tiene color de pone azul.
+  //si es 0 se cambia turno pasando al otro color y a 30.
+  //si es -1 es porque alguien gano, se pone estáticas todas las fichas y hace return.
+  //si no pasa nada de lo anterior se reduce en 1 el contador y se llama devuelta la función a si misma.
   updateClock() {
     document.getElementById("countdown").innerHTML = this.totalTime;
     if (this.totalTime == 30) {
@@ -123,12 +129,14 @@ class Game {
     }
   }
 
+  //cambia el turno y vuelve a poner el contador a 30.
   setTurn() {
     this.players[0].setIsPlaying(!this.players[0].getIsPlaying());
     this.players[1].setIsPlaying(!this.players[1].getIsPlaying());
     this.totalTime = 30;
   }
 
+  //Agrega los juegadores al juego.
   addPlayers() {
     let p1 = new Player(1, "Astronauta", "Astronauta", true);
     let p2 = new Player(2, "Alien", "Alien", false);
@@ -245,6 +253,8 @@ class Game {
     this.drawChips();
   }
 
+  //se limpia el tablero, y en orden se pinta el background image, la tabla image, las fichas del tablero(this.chips), las flechas de ingresar ficha y finalmente las fichas de los jugadores.
+  //si el color de la ficha es azul se pinta la IMG de astronauta sino se pinta la de alien.
   drawChips() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.ctx.drawImage(this.backgroundImg, 0, 0, 1200, 700);
@@ -280,18 +290,20 @@ class Game {
     }
   }
 
+  //se dibujan las flechas con su imagen y poniéndolas -20 de x e y q es la mitad de lo que mide la IMG para que quede centrada
   drawArrows() {
     for (let i = 0; i < this.insertSpace.length; i++) {
       this.ctx.drawImage(
         this.insertImg,
-        this.insertSpace[i].x - 19,
-        this.insertSpace[i].y - 19,
+        this.insertSpace[i].x - 20,
+        this.insertSpace[i].y - 20,
         40,
         40
       );
     }
   }
 
+  //Chequea si existe un ganador, se busca si hay x fichas del mismo equipo en horizontal,vertical,antidiagonal y diagonal (x segun, en linea es 4, 5 en linea es 5...).
   checkWinner() {
     //horizontaly
     for (let r = 0; r < this.boardRows; r++) {
@@ -390,6 +402,7 @@ class Game {
     }
   }
 
+  //Muestra el ganador
   setWinner(color) {
     let winnerText = document.getElementById("winnerText");
     if (color == "blue") {
@@ -403,6 +416,7 @@ class Game {
     console.log("Winner: " + color);
   }
 
+  //Busca una ficha segun la posicion en el tablero
   getChipByPosBoard(y, x) {
     let findedChip = this.chips.find(
       (chip) => chip.xBoard == x && chip.yBoard == y
@@ -410,6 +424,7 @@ class Game {
     return findedChip;
   }
 
+  //Busca si se hizo clic sobre una ficha de un jugador
   findClicked(clickX, clickY) {
     for (let p = 0; p < this.players.length; p++) {
       let chips = this.players[p].getChips();
@@ -422,6 +437,7 @@ class Game {
     }
   }
 
+  //se fija si la ficha se soltó sobre una flecha de entrada(insertSpace) de ser así devuelve está.
   findClickedSpace(x, y) {
     for (let i = 0; i < this.insertSpace.length; i++) {
       if (
@@ -438,6 +454,7 @@ class Game {
     return false;
   }
 
+  //de Enconttar un espacio libre(ficha blanca), mueve la ficha que se está arrastrando a esa misma posición de la ficha blanca, la pone como estática,se fija si gano el jugador y cambia turno
   onMouseUp() {
     canvas.addEventListener("mouseup", (e) => {
       if (this.isDragging) {
@@ -450,8 +467,6 @@ class Game {
             changeChip.color = this.draggingChip.color;
             this.draggingChip.move(changeChip.x, changeChip.y);
             this.draggingChip.statics = true;
-            /*this.boardChips[changeChip.xBoard][changeChip.yBoard] =
-              changeChip.color;*/
             changeChip.draw();
             this.drawChips();
             this.setTurn();
@@ -463,6 +478,7 @@ class Game {
     });
   }
 
+  //devuelve la primer ficha blanca(espacio del tablero) empezando de abajo del todo de la columna, de no haber devuelve null
   getPosLibre(putChip) {
     for (let i = this.boardRows - 1; i >= 0; i--) {
       let changeChip = this.chips.find(
@@ -476,6 +492,9 @@ class Game {
     }
     return null;
   }
+
+  //se fija de se clicleo una ficha y está no es estática ni del jugador que no posea el turno actual
+  //de existir una ficha seleccionada previamente le saca el booleana de ficha anterior
   onMouseDown() {
     canvas.addEventListener("mousedown", (e) => {
       let clickX = e.pageX - canvas.offsetLeft;
@@ -508,6 +527,7 @@ class Game {
     });
   }
 
+  //Si se está arrastrando una ficha, Le cambia a esta ficha su X e Y por los actuales del mouse y vuelve a borrar y dibujar el tablero.
   dragChip(e) {
     if (this.isDragging == true) {
       if (this.previousSelectedChip != null) {

@@ -4,6 +4,7 @@ let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 let game;
 
+//prepara el boton de reiniciar juego
 prepareRestart();
 
 function prepareRestart() {
@@ -20,35 +21,34 @@ function prepareRestart() {
 //preparo los botones para elegir el juego
 prepareGameChanges();
 
-function prepareGameChanges(){
+function prepareGameChanges() {
   //traigo los botones con la clase btnChange
-  let btns = document.getElementsByClassName('btnChange');
+  let btns = document.getElementsByClassName("btnChange");
   //recorro el arreglo de botones
-  for(const btn of btns){
+  for (const btn of btns) {
     //a cada boton le agrego el evento que cargara las opciones para fichas
     btn.addEventListener("click", function () {
       loadChipsOptions(btn.dataset.number);
     });
   }
-  
 }
 
-function loadChipsOptions(number){
+function loadChipsOptions(number) {
   //traigo los botones con la clase btnChange
-  let btns = document.getElementsByClassName('btnChange');
+  let btns = document.getElementsByClassName("btnChange");
   //recorro el arreglo para desabilitar y esconder las opciones
-  for(const btn of btns){
+  for (const btn of btns) {
     btn.disabled = true;
-    btn.style.display = 'none'
+    btn.style.display = "none";
   }
   //traigo los botones con la clase btnOption
-  let options = document.getElementsByClassName('btnOption');
+  let options = document.getElementsByClassName("btnOption");
   //recorro el arreglo de botones
-  for(const option of options){
+  for (const option of options) {
     //activo cada boton
     option.disabled = false;
     //muestro el boton
-    option.style.display = 'block';
+    option.style.display = "block";
     //agrego un evento al boton
     option.addEventListener("click", function () {
       loadGame(number, option.dataset.number);
@@ -56,15 +56,15 @@ function loadChipsOptions(number){
   }
 }
 
-function loadGame(number, opt){
+function loadGame(number, opt) {
   //traigo los botones con la clase btnOption
-  let options = document.getElementsByClassName('btnOption');
-   //recorro el arreglo para desabilitar y esconder las opciones
-   for(const option of options){
+  let options = document.getElementsByClassName("btnOption");
+  //recorro el arreglo para desabilitar y esconder las opciones
+  for (const option of options) {
     option.disabled = true;
-    option.style.display = 'none'
+    option.style.display = "none";
   }
-  if(opt == 1){
+  if (opt == 1) {
     //creo una instancia del juego
     game = new Game();
     //establesco el estilo de las fichas
@@ -72,7 +72,7 @@ function loadGame(number, opt){
     game.astronautChipImg = document.getElementById("astronautChipImg");
     //le establesco la cantidad
     game.changeConnect4To(number);
-  } else if(opt == 2){
+  } else if (opt == 2) {
     //creo una instancia del juego
     game = new Game();
     //establesco el estilo de las fichas
@@ -80,7 +80,7 @@ function loadGame(number, opt){
     game.astronautChipImg = document.getElementById("astronautChipImg2");
     //le establesco la cantidad
     game.changeConnect4To(number);
-  } else if(opt == 3){
+  } else if (opt == 3) {
     //creo una instancia del juego
     game = new Game();
     //establesco el estilo de las fichas
@@ -89,5 +89,4 @@ function loadGame(number, opt){
     //le establesco la cantidad
     game.changeConnect4To(number);
   }
-  
 }
