@@ -36,7 +36,7 @@ body, html {
     color: rgba(250, 244, 244, 1);
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
-    display: none;
+    /*display: none;*/
 }
 
 .hero {
@@ -554,4 +554,86 @@ footer {
 .btn:hover {
     animation-delay: 4s;
     background-color: var(--first-shadow1-color);
+}
+
+
+/*
+================================================
+* Spritesheet
+================================================
+*/
+#knight {
+    /*Tamañodelaviñetaindividual*/
+    width: 128px;
+    height: 131px;
+    /*Cómohayestablecidountamaño,centramos*/
+    margin: auto;
+    /*Cargamoselsprite(repeat-xsepuedeomitir,pordefecto)*/
+    background: url("/sources/hollow-knight-sprite.png") repeat-x;
+    /*Aplicamosanimación"walk"(0.8seg,6frames,repetimos)*/
+    animation: walk .8s steps(9) infinite;
+    /*Posicionamoselpersonajesobreelcaminodemadera*/
+    position: relative;
+    bottom: -170px;
+    -webkit-animation: walk .8s steps(9) infinite;
+}
+
+/* Animación de personaje caminando: Simplemente mueve el sprite sheet hacia la izquierda, realizando el movimiento. */
+@keyframes walk {
+
+    /* Partimos de la primera viñeta del sprite sheet */
+    from {
+        background-position: 0
+    }
+
+    /* Tamaño total de ancho del sprite.
+     Es negativo para que no "camine" hacia atrás */
+    to {
+        background-position: -1152px
+    }
+}
+
+/* Animación del cielo. Efecto "Parallax", más lento que el mar. */
+#sky {
+    background: url("/sources/runner-background.jpg") repeat-x;
+    animation: movebg 9s linear infinite;
+    -webkit-animation: movebg 9s linear infinite;
+    height: 20rem;
+}
+
+/* Animación del mar. */
+
+
+/* Animación para mover cielo y mar */
+@keyframes movebg {
+    0% {
+        background-position: 1720px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+/* OPCIONAL: Guybrush */
+#gb {
+    width: 104px;
+    height: 150px;
+    background: url("https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/monkey-guybrush.png") no-repeat;
+    animation: gbwalk 1s steps(6) infinite;
+    margin: auto;
+    position: relative;
+    top: 34px;
+    /* Ojo, muy costoso en rendimiento */
+    /* filter: drop-shadow(5px 5px 5px #000); */
+}
+
+@keyframes gbwalk {
+    0% {
+        background-position: 0
+    }
+
+    100% {
+        background-position: -624px
+    }
 }
