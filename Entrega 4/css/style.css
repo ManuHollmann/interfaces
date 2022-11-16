@@ -949,7 +949,7 @@ footer {
   color: rgba(250, 244, 244, 1);
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
-  display: none;
+  /*display: none;*/
 }
 
 .hero {

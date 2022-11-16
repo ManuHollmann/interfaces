@@ -6,7 +6,7 @@ setTimeout(function () {
 const slider = document.querySelectorAll(".slider-inner");
 const progressBar = document.querySelectorAll(".prog-bar-inner");
 let number = document.querySelector(".number");
-
+/*
 let num = 0;
 let counter = setInterval(countLoad, 50, num);
 
@@ -19,7 +19,7 @@ function countLoad() {
     num++;
     number.innerHTML = num + "<p>%</p>";
   }
-}
+}*/
 
 let sliderGrabbed = false;
 
@@ -101,21 +101,101 @@ function checkScroll() {
     }
   }
 }
+/*
+===========================
+* Parallax
+===========================
+*/
+function castParallax() {
+  window.addEventListener("scroll", function (event) {
+    var top = this.pageYOffset;
 
-/*/menu hamburguesa/;*/
-let line1 = document.querySelector(".line1__bars-menu");
-let line2 = document.querySelector(".line2__bars-menu");
-let line3 = document.querySelector(".line3__bars-menu");
-document.querySelector(".bars__menu").addEventListener("click", animateMenu);
-document.querySelectorAll("menu__item--show").forEach((x) => {
-  x.addEventListener();
-});
+    var character = document.getElementById("character-img");
+    var speed, xPos;
+    speed = character.getAttribute("data-speed");
+    var xPos = -((top * speed) / 100);
+    if (xPos > -1100) {
+      character.setAttribute(
+        "style",
+        "transform: translate3d(" + xPos + "px, 0px, 0px)"
+      );
+    }
 
-function animateMenu() {
-  line1.classList.toggle("activeline1__bars-menu");
-  line2.classList.toggle("activeline2__bars-menu");
-  line3.classList.toggle("activeline3__bars-menu");
-  document
-    .querySelector(".container-menu")
-    .classList.toggle("active-container-menu");
+    var logo = document.getElementById("logo-hero");
+    var speed, yPos;
+    speed = logo.getAttribute("data-speed");
+
+    var yPos = (top * speed) / 100;
+    if (yPos < 586.56) {
+      logo.setAttribute(
+        "style",
+        "transform: translate3d(0px, " + yPos + "px, 0px)"
+      );
+    }
+    var distanceToTop = window.pageYOffset + logo.getBoundingClientRect().top;
+    var elementHeight = logo.offsetHeight;
+    var scrollTop = document.documentElement.scrollTop + 55;
+
+    var opacity = 1;
+
+    if (scrollTop > distanceToTop) {
+      opacity = 1 - (scrollTop * 1.3 - distanceToTop) / elementHeight;
+    }
+
+    if (opacity >= 0) {
+      logo.style.opacity = opacity;
+    }
+  });
 }
+
+function castHeader() {
+  window.addEventListener("scroll", function (event) {
+    var header = document.querySelector("header");
+    var logo = document.getElementById("nav-logo");
+    var links0 = document.getElementsByClassName("nav-link");
+    var links = Array.from(links0);
+    var distanceToTop = window.pageYOffset + header.getBoundingClientRect().top;
+    var elementHeight = header.offsetHeight;
+    var scrollTop = document.documentElement.scrollTop + 55;
+
+    var height = 7;
+
+    if (scrollTop > distanceToTop) {
+      height = 7 - (scrollTop * 1.3 - distanceToTop) / elementHeight;
+    }
+
+    if (height >= 2) {
+      if (height >= 3.4) {
+        header.style.height = height + 0.5 + "%";
+      }
+      links.forEach((link) => {
+        link.style.height = height + "%";
+        link.style.width = height + "%";
+      });
+      if (height >= 5) logo.style.width = height * 13 + "%";
+    }
+  });
+}
+
+document.body.onload = castParallax();
+
+addEventListener("DOMContentLoaded", castHeader());
+
+const buttons = document.querySelectorAll("[data-carousel-button]");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+    const slides = button
+      .closest("[data-carousel]")
+      .querySelector("[data-slides]");
+
+    const activeSlide = slides.querySelector("[data-active]");
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+    if (newIndex < 0) newIndex = slides.children.length - 1;
+    if (newIndex >= slides.children.length) newIndex = 0;
+
+    slides.children[newIndex].dataset.active = true;
+    delete activeSlide.dataset.active;
+  });
+});

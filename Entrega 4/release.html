@@ -25,13 +25,26 @@
     </article>-->
 
     <div class="container">
-        <div class="hero">
-            <img class="logo" src="./sources/logo_main.png" alt="Logo del juego">
-            <a href="https://manuhollmann.github.io/interfaces/Entrega%204/" id="sticky_logo"><img
-                    src="./sources/sticky-logo.svg" alt="Logo de la pagina"></a>
-            <button class="animated button"> <strong>Precompra hoy!</strong> </button>
+        <header class="header">
+            <nav>
+                <a href="#" class="nav-link">Home</a>
+                <a href="#gameplay" class="nav-link">Gameplay</a>
+                <a href="#habilidades" class="nav-link">Habilidades</a>
+                <a href="https://manuhollmann.github.io/interfaces/Entrega%204/" id="sticky_logo"><img
+                        src="./sources/logo2.png" alt="Logo de la pagina" id="nav-logo" width="50%"></a>
+                <a href="#personajes" class="nav-link">Personajes</a>
+                <a href="#historia" class="nav-link">Historia</a>
+                <a href="#trailer" class="nav-link">Trailer</a>
+            </nav>
+        </header>
+        <div class="parallax">
+            <div class="hero">
+                <img class="logo" src="./sources/logo_main.png" id="logo-hero" alt="Logo del juego" data-speed="100">
+                <button class="animated button"> <strong>Precompra hoy!</strong> </button>
+            </div>
+            <img src="./sources/character.png" alt="knight" id="character-img" class="parallax-img" data-speed="120">
         </div>
-        <div>
+        <div id="destacados">
             <h1>Deciende a la oscuridad</h1>
             <div id="sky">
                 <div id="knight"></div>
@@ -74,7 +87,28 @@
                         las vistas y descubrir nuevas maravillas escondidas fuera de los caminos trillados.</p>
                 </article>
             </section>
-            <h2 class="sliderTitle">Habilidades</h2>
+            <h2 class="sliderTitle" id="gameplay">Gameplay</h2>
+            <section>
+                <div class="carousel" data-carousel>
+                    <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+                    <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+                    <ul data-slides>
+                        <li class="slide" data-active>
+                            <img src="./sources/carrousel-img-1.jpg" alt="gameplay image 1">
+                        </li>
+                        <li class="slide">
+                            <img src="./sources/carrousel-img-2.jpg" alt="gameplay image 2">
+                        </li>
+                        <li class="slide">
+                            <img src="./sources/carrousel-img-3.jpg" alt="gameplay image 3">
+                        </li>
+                        <li class="slide">
+                            <img src="./sources/carrousel-img-4.jpg" alt="gameplay image 4">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <h2 class="sliderTitle" id="habilidades">Habilidades</h2>
             <div class="slider-wrap">
                 <div class="slider">
                     <div class="slider-inner" data-scroll="skills">
@@ -172,7 +206,7 @@
                     <div class="prog-bar-inner" data-progres="skills"></div>
                 </div>
             </div>
-            <h2 class="sliderTitle">Personajes</h2>
+            <h2 class="sliderTitle" id="personajes">Personajes</h2>
             <div class="slider-wrap" id="npc">
                 <div class="slider">
                     <div class="slider-inner" data-scroll="npcs">
@@ -211,23 +245,37 @@
                 </div>
             </div>
 
-            <article class="lore">
-                <h2>Historia</h2>
-                <p>
-                    Antes del reino de Hallownest, había una criatura todopoderosa, EL Destello, que a través de su luz
-                    engendró a la tribu de las polillas. Entre todas, crearon el reino de Hallownest, un lugar para que
-                    los insectos pudieran pasar sus vidas. Pronto llegaron insectos de todo tipo. La tribu de las
-                    Mantis, un pueblo guerrero o la tribu de las Abejas, una sociedad jerarquizada, eran de las muchas
-                    especies que llegaron al nuevo reino, y aunque respetaban a Destello como máxima autoridad, las
-                    Mantis tenian su propio gobierno, y las abejas se encerraron en su colmena, ajenas a todo lo que
-                    pasara en Hallownest.
-                </p>
-                <p>
-                    Todo era paz y armonía, o eso parecía...
-                </p>
+            <article class="lore" id="historia">
+                <h2 class="sliderTitle">Historia</h2>
+                <div>
+                    <div>
+                        <p>
+                            Antes del reino de Hallownest, había una criatura todopoderosa, EL Destello, que a través de
+                            su
+                            luz
+                            engendró a la tribu de las polillas. Entre todas, crearon el reino de Hallownest, un lugar
+                            para
+                            que
+                            los insectos pudieran pasar sus vidas. Pronto llegaron insectos de todo tipo. La tribu de
+                            las
+                            Mantis, un pueblo guerrero o la tribu de las Abejas, una sociedad jerarquizada, eran de las
+                            muchas
+                            especies que llegaron al nuevo reino, y aunque respetaban a Destello como máxima autoridad,
+                            las
+                            Mantis tenian su propio gobierno, y las abejas se encerraron en su colmena, ajenas a todo lo
+                            que
+                            pasara en Hallownest.
+                        </p>
+                        <p>
+                            Todo era paz y armonía, o eso parecía...
+                        </p>
+                    </div>
+                    <img src="./sources/history-img.jpg" alt="hollow knight image" width="30%">
+                </div>
             </article>
 
-            <iframe src="https://www.youtube.com/embed/0GXyV9EvB_g" title="YouTube video player" frameborder="0"
+            <iframe src="https://www.youtube.com/embed/0GXyV9EvB_g" title="YouTube video player" id="trailer"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
 
