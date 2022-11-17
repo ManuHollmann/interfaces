@@ -304,6 +304,7 @@ iframe {
     border: 2px solid rgba(119, 123, 158);
     top: 5%;
     left: 5%;
+    opacity: 0;
 }
 
 .item article {
@@ -759,4 +760,28 @@ footer {
 
 .carousel-button.next {
     right: 1rem;
+}
+
+
+
+/*
+*/
+
+
+.rise {
+    opacity: 0;
+    animation: rise 0.8s ease-in-out forwards;
+}
+
+
+@keyframes rise {
+    0% {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

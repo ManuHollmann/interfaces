@@ -1,7 +1,9 @@
 setTimeout(function () {
   window.addEventListener("scroll", checkScroll);
+  window.addEventListener("scroll", castRiseCarousels);
   checkScroll();
-}, 5300);
+}, 2000);
+/*5300*/
 
 const slider = document.querySelectorAll(".slider-inner");
 const progressBar = document.querySelectorAll(".prog-bar-inner");
@@ -199,3 +201,15 @@ buttons.forEach((button) => {
     delete activeSlide.dataset.active;
   });
 });
+
+function castRiseCarousels() {
+  let triggerBottom = (window.innerHeight / 5) * 4;
+  let sectionA = document.getElementsByClassName("item");
+
+  for (a of sectionA) {
+    let top = a.getBoundingClientRect().top;
+    if (top < triggerBottom) {
+      a.classList.add("rise");
+    }
+  }
+}
