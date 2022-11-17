@@ -150,12 +150,23 @@ function castParallax() {
   });
 }
 
+var header = document.querySelector("header");
+var logo = document.getElementById("nav-logo");
+var hamburger = document.getElementById("hamburger");
+var distanceToTop = window.pageYOffset + header.getBoundingClientRect().top;
+var elementHeight = header.offsetHeight;
+var scrollTop = document.documentElement.scrollTop + 55;
+
+logo.style.width =
+  (7 - (scrollTop * 1.3 - distanceToTop) / elementHeight) * 20 + "%";
+hamburger.style.height =
+  (7 - (scrollTop * 1.3 - distanceToTop) / elementHeight) * 30 + "%";
+
 function castHeader() {
   window.addEventListener("scroll", function (event) {
     var header = document.querySelector("header");
     var logo = document.getElementById("nav-logo");
-    var links0 = document.getElementsByClassName("nav-link");
-    var links = Array.from(links0);
+    var hamburger = document.getElementById("hamburger");
     var distanceToTop = window.pageYOffset + header.getBoundingClientRect().top;
     var elementHeight = header.offsetHeight;
     var scrollTop = document.documentElement.scrollTop + 55;
@@ -170,11 +181,11 @@ function castHeader() {
       if (height >= 3.4) {
         header.style.height = height + 0.5 + "%";
       }
-      links.forEach((link) => {
-        link.style.height = height + "%";
-        link.style.width = height + "%";
-      });
-      if (height >= 5) logo.style.width = height * 13 + "%";
+      if (height >= 5) {
+        logo.style.width = height * 20 + "%";
+        hamburger.style.height = height * 40 + "%";
+        hamburger.style.width = (height * 2) / 5 + "%";
+      }
     }
   });
 }

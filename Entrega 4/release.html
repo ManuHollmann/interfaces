@@ -27,16 +27,68 @@
     <div class="container">
         <header class="header">
             <nav>
-                <a href="#" class="nav-link">Home</a>
-                <a href="#gameplay" class="nav-link">Gameplay</a>
-                <a href="#habilidades" class="nav-link">Habilidades</a>
+                <div class="bars__menu clic-item" id="hamburger">
+                    <span class="line1__bars-menu"></span>
+                    <span class="line2__bars-menu"></span>
+                    <span class="line3__bars-menu"></span>
+                </div>
                 <a href="https://manuhollmann.github.io/interfaces/Entrega%204/" id="sticky_logo"><img
-                        src="./sources/logo2.png" alt="Logo de la pagina" id="nav-logo" width="50%"></a>
-                <a href="#personajes" class="nav-link">Personajes</a>
-                <a href="#historia" class="nav-link">Historia</a>
-                <a href="#trailer" class="nav-link">Trailer</a>
+                        src="./sources/logo2.png" alt="Logo de la pagina" id="nav-logo" width="50%"
+                        class="nav-item"></a>
             </nav>
+            <nav class="container-menu">
+                <div class="nav-show" id="profile">
+                    <img src="./sources/Icons/account.svg" alt="Icono de perfil">
+                    <span>Perfil</span>
+                </div>
+                <div class="nav-show" id="favorites">
+                    <img src="./sources/Icons/Gamepad.svg" alt="Icono de favoritos">
+                    <span>Favoritos</span>
+                </div>
+                <div class="item--show nav-show" id="categories">
+                    <img src="./sources/Icons/darhboard.svg" alt="Icono de categorias">
+                    <span>Secciones</span>
+                    <ul>
+                        <li><a href="#" class="nav-link">Home</a></li>
+                        <li>
+                            <p><a href="#gameplay" class="nav-link">Gameplay</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#habilidades" class="nav-link">Habilidades</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#personajes" class="nav-link">Personajes</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#historia" class="nav-link">Historia</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#trailer" class="nav-link">Trailer</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item--show nav-show" id="social-networks">
+                    <img src="./sources/Icons/Subtract.svg" alt="Icono de redes sociales">
+                    <span> Redes</span>
+                    <ul>
+                        <li id="1"><img src="./sources/Icons/twitter.svg" alt="Icono de Twitter" width="30"
+                                height="40"><span>Twitter</span></li>
+                        <li id="2"><img src="./sources/Icons/instagram.svg" alt="Icono de Instagram" width="30"
+                                height="40">
+                            <span>Instagram</span>
+                        </li>
+                        <li id="3"><img src="./sources/Icons/facebook.svg" alt="Icono de Facebook" width="20"
+                                height="30"><span>Facebook</span></li>
+                        <li id="4"><img src="./sources/Icons/youtube.svg" alt="Icono de Youtube" width="30"
+                                height="40"><span>Youtube</span></li>
+                    </ul>
+                </div>
+                </ul>
+            </nav>
+
+
         </header>
+
         <div class="parallax">
             <div class="hero">
                 <img class="logo" src="./sources/logo_main.png" id="logo-hero" alt="Logo del juego" data-speed="100">
@@ -328,6 +380,7 @@
         </footer>
     </div>
     <script src="js/release.js"></script>
+    <script src="js/hamburger.js"></script>
 </body>
 
 </html>

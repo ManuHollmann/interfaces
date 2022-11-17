@@ -178,7 +178,7 @@ nav>.search-icon {
   display: block;
   width: 100%;
   height: 5px;
-  background: rgba(28, 28, 40, 1);
+  background: #1c1c1c;
   margin-top: 6px;
   transition: all 600ms;
   transform-origin: 0px 100%;
@@ -198,16 +198,20 @@ nav>.search-icon {
 }
 
 
-.container-menu ul {
+.container-menu div ul {
   background: rgba(21, 21, 30, 1);
   height: 100%;
   transition: transform .5s;
   display: grid;
-  transform: translateY(62px);
+  /*transform: translateY(62px);*/
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 20px;
+  -webkit-transition: transform .5s;
+  -moz-transition: transform .5s;
+  -ms-transition: transform .5s;
+  -o-transition: transform .5s;
 }
 
 .container-menu {
@@ -216,20 +220,21 @@ nav>.search-icon {
   background: #1c1c1c;
   height: 0;
   position: absolute;
-  transition: all 500ms ease;
-  transform: translateX(-100%);
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-top: 3rem;
 }
 
-.active-container-menu {
+.nav-show.active-container-menu {
   transform: translate(0);
-  height: 311px;
+  -webkit-transform: translate(0);
+  -moz-transform: translate(0);
+  -ms-transform: translate(0);
+  -o-transform: translate(0);
 }
 
-nav ul li {
+.container-menu div ul li {
   list-style: none;
   position: relative;
   height: 100%;
@@ -238,31 +243,90 @@ nav ul li {
   cursor: pointer;
 }
 
-nav ul li:hover {
+.container-menu div span {
+  padding-right: 1rem;
+  text-align: center;
+}
+
+.container-menu div span:hover, .container-menu div ul li {
   --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-nav ul li img {
+.container-menu div img {
   margin-left: 10px;
 }
 
-nav ul li:first-child {
+.container-menu div ul li:first-child {
   grid-area: 1 / 1 / 2 / 3;
 }
 
-nav ul li:last-child {
+.container-menu div ul li:last-child {
   grid-area: 2 / 1 / 3 / 3;
 }
 
+.nav-show {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  margin-top: 1rem;
+}
+
+.nav-show img {
+  margin-top: 2rem;
+}
+
+.nav-show ul {
+  opacity: 0;
+  position: absolute;
+}
+
+.nav-show.active-container-menu:hover ul {
+  opacity: 1;
+}
+
 #categories {
-  grid-area: 3 / 1 / 4 / 3;
+  transition-duration: 2s;
+  transition: all 2000ms ease;
+  -webkit-transition: all 2000ms ease;
+  -moz-transition: all 2000ms ease;
+  -ms-transition: all 2000ms ease;
+  -o-transition: all 2000ms ease;
+}
+
+#profile {
+  transition: all 1000ms ease;
+  -webkit-transition: all 1000ms ease;
+  -moz-transition: all 1000ms ease;
+  -ms-transition: all 1000ms ease;
+  -o-transition: all 1000ms ease;
+  transition-duration: 1s;
+}
+
+#favorites {
+  transition: all 1500ms ease;
+  -webkit-transition: all 1500ms ease;
+  -moz-transition: all 1500ms ease;
+  -ms-transition: all 1500ms ease;
+  -o-transition: all 1500ms ease;
+  transition-duration: 1.5s;
+}
+
+#social-networks {
+  transition: all 2500ms ease;
+  -webkit-transition: all 2500ms ease;
+  -moz-transition: all 2500ms ease;
+  -ms-transition: all 2500ms ease;
+  -o-transition: all 2500ms ease;
+  transition-duration: 2.5s;
 }
 
 .item--show:last-child {
   grid-area: 4 / 1 / 5 / 3;
 }
 
-nav>ul>li>ul {
+.container-menu>div>ul {
   list-style: none;
   transition: clip-path .3s;
   clip-path: var(--clip);
@@ -278,8 +342,14 @@ nav>ul>li>ul {
   display: table;
   height: auto;
   width: 10rem;
-  top: 7rem;
+  top: 0rem;
 }
+
+#social-networks ul {
+  top: 3.2rem;
+  left: 0rem;
+}
+
 
 #categories ul li {
   display: flex;
@@ -289,22 +359,32 @@ nav>ul>li>ul {
   text-decoration: none;
   list-style: none;
   padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 #categories ul li a {
   color: var(--white-color);
 }
 
-nav ul ul {
+
+.container-menu div ul {
   left: 100%;
 }
 
-nav ul li img {
+.container-menu div img {
   margin-top: 10px;
+  margin-right: 1rem;
+  vertical-align: middle;
 }
 
-nav ul li span {
+
+.container-menu div span {
   margin-top: 17px;
+  vertical-align: middle;
+}
+
+.container-menu div span:hover, #categories ul li a:hover {
+  color: var(--first-color);
 }
 
 
