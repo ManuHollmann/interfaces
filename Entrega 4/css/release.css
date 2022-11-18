@@ -1035,6 +1035,7 @@ footer {
 
 .container-menu div span:hover, #categories ul li a:hover {
     color: var(--first-color);
+    cursor: pointer;
 }
 
 
