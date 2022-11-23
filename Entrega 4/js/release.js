@@ -111,12 +111,11 @@ function checkScroll() {
 */
 function castParallax() {
   window.addEventListener("scroll", function (event) {
-    var top = this.pageYOffset;
+    let top = this.pageYOffset;
 
-    var character = document.getElementById("character-img");
-    var speed, xPos;
-    speed = character.getAttribute("data-speed");
-    var xPos = -((top * speed) / 100);
+    let character = document.getElementById("character-img");
+    let speed = character.getAttribute("data-speed");
+    let xPos = -((top * speed) / 100);
     if (xPos > -1100) {
       character.setAttribute(
         "style",
@@ -124,22 +123,21 @@ function castParallax() {
       );
     }
 
-    var logo = document.getElementById("logo-hero");
-    var speed, yPos;
-    speed = logo.getAttribute("data-speed");
+    let logo = document.getElementById("logo-hero");
+    let speed2 = logo.getAttribute("data-speed");
 
-    var yPos = (top * speed) / 100;
+    let yPos = (top * speed2) / 100;
     if (yPos < 586.56) {
       logo.setAttribute(
         "style",
         "transform: translate3d(0px, " + yPos + "px, 0px)"
       );
     }
-    var distanceToTop = window.pageYOffset + logo.getBoundingClientRect().top;
-    var elementHeight = logo.offsetHeight;
-    var scrollTop = document.documentElement.scrollTop + 55;
+    let distanceToTop = window.pageYOffset + logo.getBoundingClientRect().top;
+    let elementHeight = logo.offsetHeight;
+    let scrollTop = document.documentElement.scrollTop + 55;
 
-    var opacity = 1;
+    let opacity = 1;
 
     if (scrollTop > distanceToTop) {
       opacity = 1 - (scrollTop * 1.3 - distanceToTop) / elementHeight;
@@ -151,12 +149,12 @@ function castParallax() {
   });
 }
 
-var header = document.querySelector("header");
-var logo = document.getElementById("nav-logo");
-var hamburger = document.getElementById("hamburger");
-var distanceToTop = window.pageYOffset + header.getBoundingClientRect().top;
-var elementHeight = header.offsetHeight;
-var scrollTop = document.documentElement.scrollTop + 55;
+let header = document.querySelector("header");
+let logo = document.getElementById("nav-logo");
+let hamburger = document.getElementById("hamburger");
+let distanceToTop = window.pageYOffset + header.getBoundingClientRect().top;
+let elementHeight = header.offsetHeight;
+let scrollTop = document.documentElement.scrollTop + 55;
 
 logo.style.width =
   (7 - (scrollTop * 1.3 - distanceToTop) / elementHeight) * 20 + "%";
@@ -165,14 +163,14 @@ hamburger.style.height =
 
 function castHeader() {
   window.addEventListener("scroll", function (event) {
-    var header = document.querySelector("header");
-    var logo = document.getElementById("nav-logo");
-    var hamburger = document.getElementById("hamburger");
-    var distanceToTop = window.pageYOffset + header.getBoundingClientRect().top;
-    var elementHeight = header.offsetHeight;
-    var scrollTop = document.documentElement.scrollTop + 55;
+    let header = document.querySelector("header");
+    let logo = document.getElementById("nav-logo");
+    let hamburger = document.getElementById("hamburger");
+    let distanceToTop = window.pageYOffset + header.getBoundingClientRect().top;
+    let elementHeight = header.offsetHeight;
+    let scrollTop = document.documentElement.scrollTop + 55;
 
-    var height = 7;
+    let height = 7;
 
     if (scrollTop > distanceToTop) {
       height = 7 - (scrollTop * 1.3 - distanceToTop) / elementHeight;

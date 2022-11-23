@@ -76,6 +76,7 @@ header nav a:hover {
     background-image: url("../sources/background-hero.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -86,13 +87,20 @@ header nav a:hover {
     position: relative;
 }
 
+#floor-img {
+    position: absolute;
+    top: 624px;
+    width: 1920px;
+    z-index: 1;
+}
+
 #character-img {
     position: absolute;
     /*290*/
     top: 190px;
     right: 0px;
     width: 800px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .logo {
@@ -100,7 +108,7 @@ header nav a:hover {
     position: absolute;
     top: 5.3%;
     overflow: hidden;
-    z-index: 2;
+    z-index: 3;
 }
 
 #sticky_logo {
