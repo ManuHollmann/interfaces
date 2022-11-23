@@ -89,7 +89,7 @@ header nav a:hover {
 
 #floor-img {
     position: absolute;
-    top: 531px;
+    top: 625px;
     width: 1920px;
     z-index: 1;
 }
@@ -97,7 +97,7 @@ header nav a:hover {
 #character-img {
     position: absolute;
     /*290*/
-    top: 99px;
+    top: 185px;
     right: 0px;
     width: 800px;
     z-index: 2;
