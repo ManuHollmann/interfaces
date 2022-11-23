@@ -235,18 +235,6 @@ article h3, p {
     transform: translateX(0);
 }
 
-.lore :last-child {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 15%;
-    margin-top: 7%;
-    display: flex;
-    margin-left: 10rem;
-    margin-right: 10rem;
-}
-
 iframe {
     margin: auto;
     width: 80%;
@@ -262,6 +250,7 @@ iframe {
     width: 82%;
     height: 360px;
     margin-bottom: 20%;
+    opacity: 0;
 }
 
 .sliderTitle {
@@ -303,7 +292,7 @@ iframe {
     border: 2px solid rgba(119, 123, 158);
     top: 5%;
     left: 5%;
-    opacity: 0;
+    /*opacity: 0;*/
 }
 
 .item article {
@@ -799,7 +788,8 @@ footer {
 
 .rise {
     opacity: 0;
-    animation: rise 0.8s ease-in-out forwards;
+    animation: rise 1s ease-in-out forwards;
+    -webkit-animation: rise 1s ease-in-out forwards;
 }
 
 
@@ -1035,6 +1025,7 @@ footer {
 
 .container-menu div span:hover, #categories ul li a:hover {
     color: var(--first-color);
+    cursor: pointer;
 }
 
 
@@ -1056,4 +1047,43 @@ footer {
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
+}
+
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.history-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10rem;
+    opacity: 0;
+}
+
+.fall {
+    animation: fall 1s ease-in-out;
+    -webkit-animation: fall 1s ease-in-out;
+}
+
+.history-card div {
+    width: 30%;
+    margin-left: 4rem;
+}
+
+.history-card {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.history-card div {
+    margin-left: 4rem;
 }

@@ -1,6 +1,7 @@
 setTimeout(function () {
   window.addEventListener("scroll", checkScroll);
   window.addEventListener("scroll", castRiseCarousels);
+  window.addEventListener("scroll", castRiseHistory);
   checkScroll();
 }, 2000);
 /*5300*/
@@ -184,7 +185,7 @@ function castHeader() {
       if (height >= 5) {
         logo.style.width = height * 20 + "%";
         hamburger.style.height = height * 40 + "%";
-        hamburger.style.width = (height * 2) / 5 + "%";
+        /*hamburger.style.width = (height * 2) / 5 + "%";*/
       }
     }
   });
@@ -215,12 +216,28 @@ buttons.forEach((button) => {
 
 function castRiseCarousels() {
   let triggerBottom = (window.innerHeight / 5) * 4;
-  let sectionA = document.getElementsByClassName("item");
+  let sectionA = document.getElementsByClassName("slider-wrap");
 
   for (a of sectionA) {
     let top = a.getBoundingClientRect().top;
     if (top < triggerBottom) {
       a.classList.add("rise");
+    }
+  }
+}
+
+function castRiseHistory() {
+  let triggerBottom = (window.innerHeight / 5) * 4;
+  let sectionA = document.getElementsByClassName("history-card");
+
+  for (a of sectionA) {
+    let top = a.getBoundingClientRect().top;
+    if (top < triggerBottom - 700 || top >= triggerBottom) {
+      a.classList.add("fall");
+      a.classList.remove("rise");
+    } else if (top < triggerBottom) {
+      a.classList.add("rise");
+      a.classList.remove("fall");
     }
   }
 }
