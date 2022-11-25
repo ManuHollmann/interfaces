@@ -288,19 +288,35 @@ iframe {
     height: 90%;
 }
 
-.item {
+.item{
     position: relative;
     align-items: center;
     justify-content: center;
     width: 230px;
     height: 95%;
     margin: 0%;
-    display: grid;
-    grid-template-rows: (3, 1fr);
     border: 2px solid rgba(119, 123, 158);
     top: 5%;
     left: 5%;
-    /*opacity: 0;*/
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+}
+
+#skillItem{
+    display: grid;
+    grid-template-rows: (3, 1fr);
+}
+
+#skillItem .card-front{
+    backface-visibility: hidden;
+    grid-area: 1 / 1 / 4 / 2;
+}
+
+#skillItem .card-back{
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    text-align: center;
+    grid-area: 2 / 1 / 3 / 2;
 }
 
 .item article {
@@ -323,8 +339,7 @@ iframe {
 }
 
 .item:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
+    transform: rotateY(180deg);
 }
 
 #npc .slider {
@@ -334,11 +349,32 @@ iframe {
     cursor: grabbing;
 }
 
-#npc .slider .item {
+#npc .slider .item{
     position: relative;
     align-items: center;
     justify-content: center;
     background-color: rgba(21, 21, 30, 1);
+}
+
+#npc .slider .item div{
+    position: absolute;
+    display: grid;
+    grid-template-rows: (3, 1fr);
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+  
+#npc .slider .item .card-front{
+    backface-visibility: hidden;
+    grid-area: 1 / 1 / 4 / 2;
+}
+  
+#npc .slider .item .card-back{
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    text-align: center;
+    grid-area: 2 / 1 / 3 / 2;
 }
 
 figcaption {
