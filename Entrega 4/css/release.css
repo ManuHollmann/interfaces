@@ -69,7 +69,7 @@ header nav a:hover {
     color: rgba(250, 244, 244, 1);
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
-    /*display: none;*/
+    display: none;
 }
 
 .hero {
@@ -288,7 +288,7 @@ iframe {
     height: 90%;
 }
 
-.item{
+.item {
     position: relative;
     align-items: center;
     justify-content: center;
@@ -302,17 +302,17 @@ iframe {
     transition: all 1s ease;
 }
 
-#skillItem{
+#skillItem {
     display: grid;
     grid-template-rows: (3, 1fr);
 }
 
-#skillItem .card-front{
+#skillItem .card-front {
     backface-visibility: hidden;
     grid-area: 1 / 1 / 4 / 2;
 }
 
-#skillItem .card-back{
+#skillItem .card-back {
     backface-visibility: hidden;
     transform: rotateY(180deg);
     text-align: center;
@@ -349,14 +349,14 @@ iframe {
     cursor: grabbing;
 }
 
-#npc .slider .item{
+#npc .slider .item {
     position: relative;
     align-items: center;
     justify-content: center;
     background-color: rgba(21, 21, 30, 1);
 }
 
-#npc .slider .item div{
+#npc .slider .item div {
     position: absolute;
     display: grid;
     grid-template-rows: (3, 1fr);
@@ -364,13 +364,13 @@ iframe {
     width: 100%;
     height: 100%;
 }
-  
-#npc .slider .item .card-front{
+
+#npc .slider .item .card-front {
     backface-visibility: hidden;
     grid-area: 1 / 1 / 4 / 2;
 }
-  
-#npc .slider .item .card-back{
+
+#npc .slider .item .card-back {
     backface-visibility: hidden;
     transform: rotateY(180deg);
     text-align: center;
@@ -783,13 +783,31 @@ footer {
 .slide[data-active] {
     opacity: 1;
     z-index: 1;
+    animation: fadeInSmaller 1.8s;
+    transition-delay: 20ms;
+    -webkit-animation: fadeInSmaller 1.8s;
 }
 
-.slide[data-active] img {
-    animation: fadeIn 1.8s;
-    transition-delay: 20ms;
-    -webkit-animation: fadeIn 1.8s;
+@keyframes fadeInSmaller {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
 }
+
 
 .carousel-button {
     position: absolute;
@@ -826,8 +844,7 @@ footer {
 
 
 
-/*
-*/
+/**/
 
 
 .rise {
@@ -859,20 +876,20 @@ footer {
     cursor: pointer;
 }
 
-.bars__menu:active{
+.bars__menu:active {
     animation: fadeIn 0.3s ease-in-out forwards;
 
 }
 
-.active__bars-menu>:first-child{
+.active__bars-menu>:first-child {
     animation: hamburguerSpan1 0.6s ease-in-out forwards;
 }
 
-.active__bars-menu>:nth-child(2){
+.active__bars-menu>:nth-child(2) {
     animation: hamburguerSpan2 0.6s ease-in-out forwards;
 }
 
-.active__bars-menu>:nth-child(3){
+.active__bars-menu>:nth-child(3) {
     animation: hamburguerSpan3 0.6s ease-in-out forwards;
 }
 
@@ -887,35 +904,39 @@ footer {
 }
 
 @keyframes fadeIn {
-    from{
+    from {
         display: none;
         opacity: 0;
     }
-    1%{
+
+    1% {
         display: block;
         opacity: 0;
     }
-    to{
+
+    to {
         display: block;
         opacity: 1;
     }
 }
 
 @keyframes hamburguerSpan1 {
-    from{
+    from {
         transform: rotate(0deg) translate(0px, 0px);
     }
-    to{
+
+    to {
         transform: rotate(45deg) translate(-3px, 0px);
     }
 }
 
 @keyframes hamburguerSpan2 {
-    from{
+    from {
         opacity: 1;
         margin-left: 0px;
     }
-    to{
+
+    to {
         opacity: 0;
         margin-left: -30px;
     }
@@ -923,10 +944,11 @@ footer {
 
 
 @keyframes hamburguerSpan3 {
-    from{
+    from {
         transform: rotate(0deg) translate(0px, 0px);
     }
-    to{
+
+    to {
         transform: rotate(-45deg) translate(-1px, 2px);
     }
 }
@@ -1142,7 +1164,101 @@ footer {
 }
 
 
-@keyframes fall {
+
+/*seccion historia*/
+
+.history-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    top: -90px;
+    position: relative;
+}
+
+.history-section p {
+    font-size: 1.4rem;
+    margin-right: 10rem;
+}
+
+.history-section .left-section {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 5%;
+    z-index: 3;
+}
+
+.history-card-content {
+    width: 100%;
+    height: 400px;
+    top: 160px;
+    position: sticky;
+    display: none;
+}
+
+.showContent {
+    display: block;
+}
+
+
+.history-section .left-section .history-card-content .history-card-image {
+    width: 500px;
+    height: 320px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-history {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.history-section .right-section {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    width: 50%;
+    overflow: hidden;
+}
+
+.history-section .right-section .history-text-content {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 10%;
+    height: 400px;
+
+}
+
+
+.fade-in {
+    animation: ease 0.9s fadeOut-history forwards;
+    -webkit-animation: ease 0.9s fadeOut-history forwards;
+}
+
+.fade-in.appear {
+    animation: ease 0.9s fadeIn-history forwards;
+    -webkit-animation: ease 0.9s fadeIn-history forwards;
+}
+
+.showCard {
+    display: block;
+}
+
+@keyframes fadeIn-history {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut-history {
     0% {
         opacity: 1;
     }
@@ -1152,30 +1268,23 @@ footer {
     }
 }
 
-
-.history-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 10rem;
-    opacity: 0;
+.slide-up {
+    transform: translateY(150px);
+    transition: transform 0.5s ease-in;
+    animation: ease 0.9s fadeOut-history forwards;
+    -webkit-animation: ease 0.9s fadeOut-history forwards;
+    -webkit-transition: transform 0.5s ease-in;
+    -moz-transition: transform 0.5s ease-in;
+    -ms-transition: transform 0.5s ease-in;
+    -o-transition: transform 0.5s ease-in;
 }
 
-.fall {
-    animation: fall 1s ease-in-out;
-    -webkit-animation: fall 1s ease-in-out;
-}
-
-.history-card div {
-    width: 30%;
-    margin-left: 4rem;
-}
-
-.history-card {
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-}
-
-.history-card div {
-    margin-left: 4rem;
+.slide-up.appear {
+    transform: translateY(0);
+    transition: transform 0.5s ease-in;
+    animation: ease 0.9s fadeIn-history forwards;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
 }
