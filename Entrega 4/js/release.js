@@ -94,6 +94,12 @@ function checkScroll() {
 * Parallax
 ===========================
 */
+
+/*Segun la posicion X(para img de personaje) e Y(para img de logo) hace que se transladen para la izq(personaje) y abajo
+(logo) teniendo un limite (para el logo la parte mas baja del hero y para el personaje la parte mas a la izquierda del hero)
+Ademas cada uno tiene un atributo data-speed para decirle la velocidad de translacion
+Al logo adicionalmente miestras mas baje su Y (mas distancia del top) baja su opacidad*/
+
 function castParallax() {
   window.addEventListener("scroll", function (event) {
     let top = this.pageYOffset;
@@ -146,6 +152,9 @@ logo.style.width =
 hamburger.style.height =
   (7 - (scrollTop * 1.3 - distanceToTop) / elementHeight) * 30 + "%";
 
+/*Reduce el tamanio del menu hamburgesa y del logo del header, segun se vaya bajando la posicion Y (mas lejos del Top)
+hasta un limite. Tambien desde este limite para arriba va creciendo el tamanio de los 2 items hasta llegar al top*/
+
 function castHeader() {
   window.addEventListener("scroll", function (event) {
     let header = document.querySelector("header");
@@ -178,6 +187,14 @@ document.body.onload = castParallax();
 
 addEventListener("DOMContentLoaded", castHeader());
 
+/*SECCION GAMEPLAY, CARRUSEL IMG CON ANIMACION*/
+
+/*se determina cual es la siguiente y la anterior img con los atributos de html, luego se selecciona el
+el contenedor de las slides donde pertenece el boton, luego se busca la slide que tenga el atributo active
+. Luego se hace el newIndex(para encontrar el index de la img actual) en base al index de la slide active + offset (que le suma 1 o resta 1 segun
+era la siguiente.
+Finalmente pone como active la slide actual y elimina el active de la anterior)*/
+
 const buttons = document.querySelectorAll("[data-carousel-button]");
 
 buttons.forEach((button) => {
@@ -196,6 +213,10 @@ buttons.forEach((button) => {
     delete activeSlide.dataset.active;
   });
 });
+
+/*cuando se scrollea salta esta function que va comprobando si la ventana llego a la posicion de cada carusel,
+de ser asi, se agrega la classList "rise" que hace la animacion de pasar de opacidad 0 a 1 y de venir de abajo
+hacia arriba*/
 
 function castRiseCarousels() {
   let triggerBottom = (window.innerHeight / 5) * 4;
@@ -225,7 +246,7 @@ function castRiseHero() {
   }
 }
 
-//Scroll cards history
+//SECCION HISTORIA
 let faders = document.querySelectorAll(".fade-in");
 let sliders = document.querySelectorAll(".slide-in");
 let slidersUp = document.querySelectorAll(".slide-up");
@@ -251,6 +272,8 @@ let characters = document.querySelectorAll("article.characters ul");
 
 window.addEventListener("scroll", scrollAppear);
 
+/*Segun se vayan viendo los elementos (esto se confirma atravez del scroll) se les agrega la clase appear para
+que pasen de opacidad 0 a 1 gradualmente*/
 function scrollAppear() {
   faders.forEach((fader) => {
     let top = fader.getBoundingClientRect().top;
@@ -277,6 +300,9 @@ function scrollAppear() {
   let topPosition1 = historytext2.getBoundingClientRect().top;
   let topPosition2 = historytext3.getBoundingClientRect().top;
   let topTrailer = trailer.getBoundingClientRect().top;
+
+  /*Segun se vayan viendo los elementos se le agrega la clase para que se vean, y cuando los elementos van quedando
+  atras se les agrega la clase fade-in para que vayan desapeciendo con su opacidad de 1 a 0 gradualmente*/
 
   if (topPosition < position) {
     historyCard1.classList.add("showContent");

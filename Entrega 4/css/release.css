@@ -72,6 +72,8 @@ header nav a:hover {
     display: none;
 }
 
+/*Posicion fija para que baje la imagen con el scroll y sin z-index para que quede como el fondo que mas atras esta (capa 0 del parallax)*/
+
 .hero {
     background-image: url("../sources/background-hero.jpg");
     background-size: cover;
@@ -83,10 +85,12 @@ header nav a:hover {
     justify-content: center;
 }
 
+
 .parallax {
     position: relative;
 }
 
+/*capa 1 parallax*/
 #floor-img {
     position: absolute;
     top: 625px;
@@ -94,15 +98,16 @@ header nav a:hover {
     z-index: 1;
 }
 
+/*capa 2 parallax*/
 #character-img {
     position: absolute;
-    /*290*/
     top: 187px;
     right: 0px;
     width: 800px;
     z-index: 2;
 }
 
+/*capa 3 parallax*/
 .logo {
     align-self: initial;
     position: absolute;
@@ -232,6 +237,10 @@ article h3, p {
 .gameSectionA {
     transform: translateX(-150%);
     transition: 1s ease;
+    -webkit-transform: translateX(-150%);
+    -moz-transform: translateX(-150%);
+    -ms-transform: translateX(-150%);
+    -o-transform: translateX(-150%);
 }
 
 .gameSectionB {
@@ -650,16 +659,16 @@ footer {
 ================================================
 */
 #knight {
-    /*Tamañodelaviñetaindividual*/
+    /*Tamaño de la viñeta individual*/
     width: 128px;
     height: 131px;
-    /*Cómohayestablecidountamaño,centramos*/
+    /*Cómo hay establecido un tamaño,centramos*/
     margin: auto;
-    /*Cargamoselsprite(repeat-xsepuedeomitir,pordefecto)*/
+    /*Cargamos el sprite*/
     background: url("../sources/hollow-knight-sprite.png") repeat-x;
-    /*Aplicamosanimación"walk"(0.8seg,6frames,repetimos)*/
+    /*Aplicamos animación "walk" (0.8seg, 6frames, repetimos)*/
     animation: walk .8s steps(9) infinite;
-    /*Posicionamoselpersonajesobreelcaminodemadera*/
+    /*Posicionamos el personaje sobre el camino*/
     position: relative;
     bottom: -170px;
     -webkit-animation: walk .8s steps(9) infinite;
@@ -680,18 +689,16 @@ footer {
     }
 }
 
-/* Animación del cielo. Efecto "Parallax", más lento que el mar. */
-#sky {
+/* Animación del fondo. Efecto "Parallax".*/
+#background-spritesheet {
     background: url("../sources/runner-background.jpg") repeat-x;
     animation: movebg 9s linear infinite;
     -webkit-animation: movebg 9s linear infinite;
     height: 20rem;
 }
 
-/* Animación del mar. */
 
-
-/* Animación para mover cielo y mar */
+/* Animación para mover background */
 @keyframes movebg {
     0% {
         background-position: 1720px
@@ -701,30 +708,6 @@ footer {
         background-position: 0
     }
 }
-
-/* OPCIONAL: Guybrush */
-#gb {
-    width: 104px;
-    height: 150px;
-    background: url("https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/monkey-guybrush.png") no-repeat;
-    animation: gbwalk 1s steps(6) infinite;
-    margin: auto;
-    position: relative;
-    top: 34px;
-    /* Ojo, muy costoso en rendimiento */
-    /* filter: drop-shadow(5px 5px 5px #000); */
-}
-
-@keyframes gbwalk {
-    0% {
-        background-position: 0
-    }
-
-    100% {
-        background-position: -624px
-    }
-}
-
 
 .carousel {
     width: 50vw;
@@ -780,6 +763,8 @@ footer {
     }
 }
 
+/*muestra solo la imagen que con data-active (puesto desde js)*/
+
 .slide[data-active] {
     opacity: 1;
     z-index: 1;
@@ -788,6 +773,7 @@ footer {
     -webkit-animation: fadeInSmaller 1.8s;
 }
 
+/*animacion de scale mas grande y opacidad 0, a scale original con opacidad 1, esto de forma gradual*/
 @keyframes fadeInSmaller {
     0% {
         opacity: 0;
