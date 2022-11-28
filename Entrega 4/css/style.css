@@ -197,6 +197,73 @@ nav>.search-icon {
   transform: rotate(-45deg) translate(-1px, 2px);
 }
 
+.bars__menu:active {
+  animation: fadeIn 0.3s ease-in-out forwards;
+
+}
+
+.active__bars-menu>:first-child {
+  animation: hamburguerSpan1 0.6s ease-in-out forwards;
+}
+
+.active__bars-menu>:nth-child(2) {
+  animation: hamburguerSpan2 0.6s ease-in-out forwards;
+}
+
+.active__bars-menu>:nth-child(3) {
+  animation: hamburguerSpan3 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+
+
+@keyframes hamburguerSpan1 {
+  from {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+
+  to {
+    transform: rotate(45deg) translate(-3px, 0px);
+  }
+}
+
+@keyframes hamburguerSpan2 {
+  from {
+    opacity: 1;
+    margin-left: 0px;
+  }
+
+  to {
+    opacity: 0;
+    margin-left: -30px;
+  }
+}
+
+
+@keyframes hamburguerSpan3 {
+  from {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+
+  to {
+    transform: rotate(-45deg) translate(-1px, 2px);
+  }
+}
 
 .container-menu div ul {
   background: rgba(21, 21, 30, 1);

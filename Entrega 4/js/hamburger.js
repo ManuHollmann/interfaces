@@ -1,6 +1,8 @@
 /*/menu hamburguesa/;*/
 
-let menu = document.getElementById("hamburger").addEventListener("click", animateMenu);
+let menu = document
+  .getElementById("hamburger")
+  .addEventListener("click", animateMenu);
 document.querySelectorAll("menu__item--show").forEach((x) => {
   x.addEventListener();
 });
