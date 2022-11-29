@@ -1219,12 +1219,12 @@ footer {
 
 }
 
-
+/*Clase que asigna la animacion de desaparicion*/
 .fade-in {
     animation: ease 0.9s fadeOut-history forwards;
     -webkit-animation: ease 0.9s fadeOut-history forwards;
 }
-
+/*Clase que asigna la animacion de aparicion*/
 .fade-in.appear {
     animation: ease 0.9s fadeIn-history forwards;
     -webkit-animation: ease 0.9s fadeIn-history forwards;
@@ -1233,7 +1233,7 @@ footer {
 .showCard {
     display: block;
 }
-
+/*Animacion aparicion seccion historia*/
 @keyframes fadeIn-history {
     0% {
         opacity: 0;
@@ -1243,7 +1243,7 @@ footer {
         opacity: 1;
     }
 }
-
+/*Animacion desaparicion seccion historia*/
 @keyframes fadeOut-history {
     0% {
         opacity: 1;
@@ -1254,6 +1254,8 @@ footer {
     }
 }
 
+
+/*Transicion de historia*/
 .slide-up {
     transform: translateY(150px);
     transition: transform 0.5s ease-in;
